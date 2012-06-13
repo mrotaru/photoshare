@@ -42,6 +42,17 @@ class User {
         }
     }
 
+    //--------------------------------------------------------------------------
+    private static function instantiate( $record ) {
+        $object = new self;
+        $object->id = $record['id'];
+        $object->objectname = $record['objectname'];
+        $object->password = $record['hashed_password'];
+        $object->first_name = $record['first_name'];
+        $object->last_name = $record['last_name'];
+        $object->email = $record['email'];
+        return $object;
+    }
 }
 
 ?>
