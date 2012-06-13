@@ -2,6 +2,12 @@
 require_once("config.php");
 
 class MySQLDatabase {
+    
+    // constants
+    const DB_SERVER = 'localhost';
+    const DB_USER = 'gallery';
+    const DB_PASS = 'asdjkl';
+    const DB_NAME = 'imgshare';
 
     // attributes
     //--------------------------------------------------------------------------
@@ -16,11 +22,11 @@ class MySQLDatabase {
     // methods
     //--------------------------------------------------------------------------
     public function open_connection() {
-        $this->connection = mysql_connect( DB_SERVER, DB_USER, DB_PASS );
+        $this->connection = mysql_connect( $this::DB_SERVER, $this::DB_USER, $this::DB_PASS );
         if( !$this->connection ) {
             die( "Cannot connect to database: " . mysql_error());
         } else {
-            $db_select = mysql_select_db( DB_NAME, $this->connection );
+            $db_select = mysql_select_db( $this::DB_NAME, $this->connection );
             if( !$db_select ) {
                 die( "Database selection failed: " . mysql_error() );
             }
