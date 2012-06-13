@@ -10,27 +10,31 @@ class User {
     public $last_name;
     public $email;
 
+    // returns an array of User objects, with all the users in the current db
     //--------------------------------------------------------------------------
     public static function find_all() {
         global $database;
-        $result_set = $database->query( "SELECT * FROM Users" );
-        return $result_set;
+        $result_array = self::find_by_sql( "SELECT * FROM Users" );
+        return !empty( $result_array ) ? $result_array : false;
     }
 
+    // returns the first User having the `id` passed as a parameter
     //--------------------------------------------------------------------------
     public static function find_by_id( $id=0 ) {
         global $database;
-        $result_set = $database->query( "SELECT * FROM users WHERE id={$id}" );
-        
-        $found = $database->fetch_array( $result_set );
-        return $found;
+        $result_array = self::find_by_sql( "SELECT * FROM users WHERE id={$id} LIMIT 1" );
+        return !empty( $result_array ) ? array_shift( $result_array ) : false;
     }
 
     //--------------------------------------------------------------------------
     public static function find_by_sql( $sql="" ) {
         global $database;
         $result_set = $database->query( $sql );
-        return $result_set;
+        $object_array = array();
+        while( $row = $database->fetch_array( $result_set ) ) {
+            $object_array[] = self::instantiate( $row );
+        }
+        return $object_array;
     }
 
     //--------------------------------------------------------------------------
