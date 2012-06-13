@@ -45,13 +45,26 @@ class User {
     //--------------------------------------------------------------------------
     private static function instantiate( $record ) {
         $object = new self;
-        $object->id = $record['id'];
-        $object->objectname = $record['objectname'];
-        $object->password = $record['hashed_password'];
-        $object->first_name = $record['first_name'];
-        $object->last_name = $record['last_name'];
-        $object->email = $record['email'];
+//        $object->id = $record['id'];
+//        $object->objectname = $record['objectname'];
+//        $object->password = $record['password'];
+//        $object->first_name = $record['first_name'];
+//        $object->last_name = $record['last_name'];
+//        $object->email = $record['email'];
+
+        foreach( $record as $attribute=>$value ) {
+            if( $object->has_attribute( $attribute ) ) {
+                $object->$attribute = $value;
+            }
+        }
+
         return $object;
+    }
+
+    //--------------------------------------------------------------------------
+    private function has_attribute( $attribute ) {
+        $object_vars = get_object_vars( $this );
+        return array_key_exists( $attribute, $object_vars );
     }
 }
 
