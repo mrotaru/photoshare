@@ -1,12 +1,13 @@
 <?php
 require_once( "../include/database.php" );
+require_once( "../include/user.php" );
 ?>
 
 <html>
-	<head>
-		<title>OO PHP</title>
+    <head>
+        <title>OO PHP</title>
         <link rel="stylesheet" href="css/style.css"/>
-	</head>
+    </head>
     <body>
     <?php
 
@@ -18,10 +19,17 @@ require_once( "../include/database.php" );
     //$sql .= "VALUES (1, 'derp', 'secretpwd', 'Derp', 'Derpowsky', 'derp@mail.com')";
     //$result = $database->query($sql);
 
-    $sql = "SELECT * FROM users WHERE id = 1";
-    $result_set = $database->query($sql);
-    $found_user =  mysql_fetch_array($result_set);
-    echo $found_user['username'];
+    echo("<hr/>");
+    $found = User::find_by_id(1);
+    echo $found['username'];
+
+    echo "<hr />";
+
+    $user_set = User::find_all();
+    while ($user = $database->fetch_array($user_set)) {
+        echo "User: ". $user['username'] ."<br />";
+        echo "Name: ". $user['first_name'] . " " . $user['last_name'] ."<br /><br />";
+    }
 
     ?>
     </body>
