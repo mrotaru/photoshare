@@ -1,19 +1,9 @@
 <?php
-require_once( "../../include/functions.php" );
-require_once( "../../include/database.php" );
-require_once( "../../include/session.php" );
+require_once( "../../include/init.php" );
 if( !$session->is_logged_in() ) { redirect_to( "login.php" ); }
 ?>
 
-<html>
-    <head>
-        <title>OO PHP</title>
-        <link rel="stylesheet" href="../css/style.css"/>
-    </head>
-    <body>
-    <header>
-        <h1>Pictures</h1>
-    </header>
+<?php include_layout_template( "admin_header.php" ); ?>
     <?php
     
     $user = User::find_by_id(1);
@@ -27,9 +17,4 @@ if( !$session->is_logged_in() ) { redirect_to( "login.php" ); }
         echo "Name: " . $user->full_name() . "<br/><br/>";
     }
     ?>
-
-    <footer>
-        Copyright <?php echo date("Y", time()); ?>, Mihai Rotaru
-    </footer>
-    </body>
-</html>
+<?php include_layout_template( "admin_footer.php" ); ?>
