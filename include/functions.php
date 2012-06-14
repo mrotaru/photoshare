@@ -33,7 +33,7 @@ function autoloader( $class_name ) {
     $class_name = strtolower( $class_name );
 
     // list of folders where to look for $class_name.php
-    $folders = array( "../include", "../../include" );
+    $folders = array( LIB_PATH . DS );
     
     $found = false;
     $path = "";

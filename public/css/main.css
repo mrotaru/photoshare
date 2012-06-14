@@ -575,3 +575,7 @@ footer {
   background-color: #263531;
   color: #d1d1d1;
 }
+
+#main {
+  height: 450px;
+}

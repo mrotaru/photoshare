@@ -37,6 +37,7 @@ require_once( "../include/user.php" );
         <h1>Photo Share</h1>
     </header>
 
+    <section id="main">
     <?php
     
     $user = User::find_by_id(1);
@@ -62,6 +63,7 @@ require_once( "../include/user.php" );
     <script src="js/main.js"></script>
     -->
 
+    </section>
     <footer>
         Copyright <?php echo date("Y", time()); ?>, Mihai Rotaru
     </footer>
