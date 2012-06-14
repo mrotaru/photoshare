@@ -1,4 +1,5 @@
 <?php
+require_once( LIB_PATH . DS . "logger.php" );
 
 // it is not advisable to keep DB objects in sessions because:
 // - they can become stale (the database can be update, therefore
@@ -39,6 +40,8 @@ class Session {
         if( $user ) {
             $this->user_id = $_SESSION[ 'user_id' ] = $user->id;
             $this->logged_in = true;
+            global $logger;
+            $logger->log_action( "LOGIN", $user->username . " logged in." );
         }
     }
 
