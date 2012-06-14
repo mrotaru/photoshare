@@ -644,6 +644,9 @@ body {
 header {
     background-color: $header-bg;
     color:            $header-fg;
+    overflow: hidden;
+    margin-bottom: 20px;
+    padding-left: 20px;
 }
 
 footer {

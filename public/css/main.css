@@ -566,6 +566,9 @@ body {
 header {
   background-color: #263531;
   color: #d1d1d1;
+  overflow: hidden;
+  margin-bottom: 20px;
+  padding-left: 20px;
 }
 
 footer {
