@@ -1,5 +1,20 @@
+body {
+  background-color: #d1d1d1;
+  color: #35262e;
+}
+
 .error {
-    padding: 10px;
-    background-color: #FFD2D2;
-    border: 2px solid #F00;
+  padding: 10px;
+  background-color: #FFD2D2;
+  border: 2px solid #F00;
+}
+
+header {
+  background-color: #263531;
+  color: #d1d1d1;
+}
+
+footer {
+  background-color: #263531;
+  color: #d1d1d1;
 }

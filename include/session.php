@@ -4,7 +4,7 @@
 // - they can become stale (the database can be update, therefore
 //   rendering the session's copy out-of-sync with the DB )
 // - objects can be quite large
-class Section {
+class Session {
 
     // attributes
     private $logged_in = false;

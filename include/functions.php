@@ -31,13 +31,35 @@ function redirect_to( $location = NULL ) {
 // -----------------------------------------------------------------------------
 function autoloader( $class_name ) {
     $class_name = strtolower( $class_name );
-    $path = "../include/{$class_name}.php";
-    if( file_exists( $path ) ) {
+
+    // list of folders where to look for $class_name.php
+    $folders = array( "../include", "../../include" );
+    
+    $found = false;
+    $path = "";
+    foreach( $folders as $folder ) {
+        $path = "{$folder}/{$class_name}.php";
+        if( file_exists( $path ) ) {
+            $found = true;
+            break;
+        }
+    }
+
+    if( $found ) {
         require_once( $path );
     } else {
-        die( "The file {$path}.php could not be found." );
+        die( "The file {$class_name}.php could not be found." );
     }
 }
 spl_autoload_register( 'autoloader' );
+
+// -----------------------------------------------------------------------------
+function info_message( $message ) {
+    if( !empty( $message )) {
+        return "<p class=\"info_message\">{$message}</p>";
+    } else {
+        return "";
+    }
+}
 
 ?>

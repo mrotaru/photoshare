@@ -3,6 +3,7 @@ require_once( "database.php" );
 
 class User {
 
+    // attributes
     public $id;
     public $username;
     public $password;
@@ -26,6 +27,7 @@ class User {
         return !empty( $result_array ) ? array_shift( $result_array ) : false;
     }
 
+    // returns and array of User objects selected by running the `sql` query
     //--------------------------------------------------------------------------
     public static function find_by_sql( $sql="" ) {
         global $database;
@@ -37,6 +39,25 @@ class User {
         return $object_array;
     }
 
+    // checks the database if the supplied login details are valid, and if so,
+    // returns the corresponding User object
+    //--------------------------------------------------------------------------
+    public static function authenticate( $username="", $password="" ) {
+        global $database;
+        $username = $database->escape_value( $username );
+        $password = $database->escape_value( $password );
+
+        $result_array = User::find_by_sql( "
+            SELECT * FROM users WHERE
+            username = '{$username}' AND
+            password = '{$password}'
+            LIMIT 1;
+        ");
+
+        return( !empty( $result_array )) ? array_shift( $result_array ) : false;
+    }
+
+    // concatenates the current object's first_name and last_name
     //--------------------------------------------------------------------------
     public function full_name() {
         if( isset( $this->first_name) && isset( $this->last_name ) ) {
@@ -46,15 +67,10 @@ class User {
         }
     }
 
+    // returns an User object with the attributes set from the `record`
     //--------------------------------------------------------------------------
     private static function instantiate( $record ) {
         $object = new self;
-//        $object->id = $record['id'];
-//        $object->objectname = $record['objectname'];
-//        $object->password = $record['password'];
-//        $object->first_name = $record['first_name'];
-//        $object->last_name = $record['last_name'];
-//        $object->email = $record['email'];
 
         foreach( $record as $attribute=>$value ) {
             if( $object->has_attribute( $attribute ) ) {
