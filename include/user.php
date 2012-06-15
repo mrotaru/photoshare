@@ -80,8 +80,16 @@ class User extends DatabaseObject {
         return ( $database->affected_rows() == 1 ) ? true : false;
     }
 
+    // note that the PHP instance will still be available, event though the
+    // object was deleted from the database.
     //--------------------------------------------------------------------------
     public function delete() {
+        global $database;
+        $sql = "DELETE FROM users
+                WHERE id=" . $database->escape_value( $this->id ) .
+               " LIMIT 1";
+        $database->query( $sql );
+        return ( $database->affected_rows() == 1 ) ? true : false;
     }
 }
 

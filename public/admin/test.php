@@ -13,13 +13,21 @@ include_layout_template( "admin_header.php" );
 ?>
 
 <?php
-	$user = new User();
-	$user->username = "johnsmith";
-	$user->password = "asd";
-	$user->first_name = "John";
-	$user->last_name = "Smith";
-    $user->email="john@mail.com";
-	$user->create();
+//    $user = new User();
+//    $user->username = "johnsmith";
+//    $user->password = "asd";
+//    $user->first_name = "John";
+//    $user->last_name = "Smith";
+//    $user->email="john@mail.com";
+//    $user->create();
+
+//$user = User::find_by_id(2);
+//$user->password="111";
+//$user->update();
+
+$user = User::find_by_id(2);
+$user->delete();
+
 ?>
 
 <?php include_layout_template( "admin_footer.php" ); ?>
