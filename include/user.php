@@ -41,8 +41,15 @@ class User extends DatabaseObject {
         return( !empty( $result_array )) ? array_shift( $result_array ) : false;
     }
 
+
     //--------------------------------------------------------------------------
-    public function create() {
+    public function save() {
+        return isset( $this->id ) ? $this->update() : $this->create();
+    }
+
+    // insert the current user into the database
+    //--------------------------------------------------------------------------
+    protected function create() {
         global $database;
         $sql = "INSERT INTO users ( username, password, first_name, last_name, email 
                 ) VALUES ( '";
@@ -60,7 +67,17 @@ class User extends DatabaseObject {
     }
 
     //--------------------------------------------------------------------------
-    public function update() {
+    protected function update() {
+        global $database;
+        $sql = "UPDATE users SET ";
+        $sql .= "username='" . $database->escape_value( $this->username ) . "', ";
+        $sql .= "password='" . $database->escape_value( $this->password ) . "', ";
+        $sql .= "first_name='" . $database->escape_value( $this->first_name ) . "', ";
+        $sql .= "last_name='" . $database->escape_value( $this->last_name ) . "', ";
+        $sql .= "email='" . $database->escape_value( $this->email ) . "' ";
+        $sql .= "WHERE id='" . $database->escape_value( $this->id ) . "' ";
+        $database->query( $sql );
+        return ( $database->affected_rows() == 1 ) ? true : false;
     }
 
     //--------------------------------------------------------------------------
