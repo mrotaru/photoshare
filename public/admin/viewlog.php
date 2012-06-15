@@ -14,9 +14,7 @@ if( isset( $_GET[ 'clear' ] ) && $_GET[ 'clear' ] == 'true' ) {
 
         <textarea rows="20" cols="80" readonly="true"><?php
             global $logger;
-            echo $logger->get_log_file_contents();
-            ?>    
-        </textarea>
+            echo $logger->get_log_file_contents();?></textarea>
         <br/>
         <?php
         echo ("
