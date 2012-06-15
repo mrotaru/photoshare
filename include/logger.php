@@ -42,13 +42,13 @@ class Logger {
 
     //--------------------------------------------------------------------------
     public function get_log_file_contents() {
-        $this->log_file_handle = fopen( $this->log_file_full_path, 'r' );
-        if( !$this->log_file_handle ) {
-            return "";
-        } else {
+        if( file_exists( $this->log_file_full_path ) && is_readable( $this->log_file_full_path )
+            && $this->log_file_handle = fopen( $this->log_file_full_path, 'r' ) ) {
             return file_get_contents( $this->log_file_full_path );
+            fclose( $this->log_file_handle );
+        } else {
+            die( "Cannot read from the log file." );
         }
-        fclose( $this->log_file_handle );
     }
 
     //--------------------------------------------------------------------------
