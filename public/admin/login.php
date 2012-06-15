@@ -21,13 +21,8 @@ if( isset( $_POST[ 'submit' ] )) {
     $username = "";
     $password = "";
 }
+include_layout_template( "admin_header.php" );
 ?>
-<html>
-    <head>
-        <title>OO PHP</title>
-        <link rel="stylesheet" href="../css/style.css"/>
-    </head>
-    <body>
         <form action="login.php" method="post" accepted-charset="utf-8">
             <fieldset>
                 <legend>Login Details</legend>
@@ -41,6 +36,4 @@ if( isset( $_POST[ 'submit' ] )) {
                 <input type="submit" name="submit" value="Login" class="button" />
             </fieldset>
         </form>                                
-    </body>
-</html> 
-<?php if( isset( $database )) { $database->close_connection(); } ?>
+<?php include_layout_template( "footer.php" ); ?>
