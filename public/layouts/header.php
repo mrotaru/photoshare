@@ -34,6 +34,7 @@
         global $session;
         if( $session->is_logged_in() ) {
             $user = User::find_by_id( $session->user_id );
+            if( !$user ) die( "Cannot find user with id " . $session->user_id . " in the database." );
             $username = $user->username;
             $html =  "logged in as: <strong>" . $username . "</strong>";
             $html .= "<a href=\"index.php?logout=true\">Logout</a>";

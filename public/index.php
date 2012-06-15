@@ -9,7 +9,7 @@ if( $session->is_logged_in() && isset( $_GET[ 'logout' ] )) {
         $session->logout();
     }
 }
+include_layout_template( "header.php" );
 ?>
-<?php include_layout_template( "header.php" ); ?>
     <h2>Public home page</h2>
 <?php include_layout_template( "footer.php" ); ?>

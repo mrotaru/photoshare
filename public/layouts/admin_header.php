@@ -29,6 +29,19 @@
          chromium.org/developers/how-tos/chrome-frame-getting-started -->
     <!--[if lt IE 7]><p class="chromeframe">Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
     <header>
+        <?php
+        global $session;
+        if( $session->is_logged_in() ) {
+            $user = User::find_by_id( $session->user_id );
+            if( !$user ) die( "Cannot find user with id " . $session->user_id . " in the database." );
+            $username = $user->username;
+            $html =  "logged in as: <strong>" . $username . "</strong>";
+            $html .= "<a href=\"../index.php?logout=true\">Logout</a>";
+            echo $html;
+        } else {
+            echo "<a href=\"admin/login.php\">Login</a>";
+        }
+        ?>
         <h1>Photo Share: Admin</h1>
     </header>
 
