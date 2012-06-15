@@ -3,7 +3,7 @@ require_once( "init.php" );
 require_once( LIB_PATH . DS . "database.php" );
 
 class DatabaseObject {
-    
+
     // returns an array of User objects, with all the users in the current db
     //--------------------------------------------------------------------------
     public static function find_all() {
@@ -54,8 +54,28 @@ class DatabaseObject {
 
     //--------------------------------------------------------------------------
     private function has_attribute( $attribute ) {
-        $object_vars = get_object_vars( $this );
-        return array_key_exists( $attribute, $object_vars );
+        return array_key_exists( $attribute, $this->attributes() );
+    }
+
+    //--------------------------------------------------------------------------
+    protected function attributes() {
+        $attributes = array();
+        foreach( static::$db_fields as $field ) {
+            if( property_exists( $this, $field )) {
+                $attributes[ $field ] = $this->$field;
+            }
+        }
+        return $attributes;
+    }
+
+    //--------------------------------------------------------------------------
+    protected function sanitized_attributes() {
+        global $database;
+        $clean_attributes = array();
+        foreach( $this->attributes() as $key => $value ) {
+            $clean_attributes[ $key ] = $database->escape_value( $value );
+        }
+        return $clean_attributes;
     }
 
     //--------------------------------------------------------------------------
@@ -67,13 +87,12 @@ class DatabaseObject {
     //--------------------------------------------------------------------------
     protected function create() {
         global $database;
-        $sql = "INSERT INTO " . static::$table_name . " ( username, password, first_name, last_name, email 
-                ) VALUES ( '";
-        $sql .= $database->escape_value( $this->username ) . "', '";
-        $sql .= $database->escape_value( $this->password ) . "', '";
-        $sql .= $database->escape_value( $this->first_name ) . "', '";
-        $sql .= $database->escape_value( $this->last_name ) . "', '";
-        $sql .= $database->escape_value( $this->email ) . "' )";
+        $attributes = $this->sanitized_attributes();
+        $sql = "INSERT INTO " . static::$table_name . " ( ";
+        $sql .= join( ", ", array_keys( $attributes ));
+        $sql .= ") VALUES ( '";
+        $sql .= join( "', '", array_values( $attributes ));
+        $sql .= "' )";
         if( $database->query( $sql )) {
             $this->id = $database->insert_id();
             return true;
@@ -86,13 +105,14 @@ class DatabaseObject {
     //--------------------------------------------------------------------------
     protected function update() {
         global $database;
-        $sql = "UPDATE " . static::$table_name . " users SET ";
-        $sql .= "username='" . $database->escape_value( $this->username ) . "', ";
-        $sql .= "password='" . $database->escape_value( $this->password ) . "', ";
-        $sql .= "first_name='" . $database->escape_value( $this->first_name ) . "', ";
-        $sql .= "last_name='" . $database->escape_value( $this->last_name ) . "', ";
-        $sql .= "email='" . $database->escape_value( $this->email ) . "' ";
-        $sql .= "WHERE id='" . $database->escape_value( $this->id ) . "' ";
+        $attributes = $this->sanitized_attributes();
+        $attribute_pairs = array();
+        foreach( $attributes as $key => $value ) {
+            $attribute_pairs[] = "{$key}='{$value}'";
+        }
+        $sql = "UPDATE " . static::$table_name . " SET ";
+        $sql .= join( ", ", $attribute_pairs );
+        $sql .= " WHERE id='" . $database->escape_value( $this->id ) . "' ";
         $database->query( $sql );
         if( $database->affected_rows() == 0 ) error_message( "Could not update object." );
         return ( $database->affected_rows() == 1 ) ? true : false;

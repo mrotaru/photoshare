@@ -6,6 +6,7 @@ class User extends DatabaseObject {
 
     // attributes
     protected static $table_name = "users";
+    protected static $db_fields = array( 'id', 'username', 'password', 'first_name', 'last_name', 'email' );
     public $id;
     public $username;
     public $password;
