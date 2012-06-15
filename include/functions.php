@@ -55,11 +55,14 @@ spl_autoload_register( 'autoloader' );
 
 // -----------------------------------------------------------------------------
 function info_message( $message ) {
-    if( !empty( $message )) {
-        return "<p class=\"info_message\">{$message}</p>";
-    } else {
-        return "";
-    }
+    if( !empty( $message ))
+        echo "<p class=\"info_message\">{$message}</p>";
+}
+
+// -----------------------------------------------------------------------------
+function error_message( $message ) {
+    if( !empty( $message ))
+        echo "<p class=\"error\">{$message}</p>";
 }
 
 // -----------------------------------------------------------------------------

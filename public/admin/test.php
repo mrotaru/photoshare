@@ -19,14 +19,14 @@ include_layout_template( "admin_header.php" );
 //    $user->first_name = "John";
 //    $user->last_name = "Smith";
 //    $user->email="john@mail.com";
-//    $user->create();
+//    $user->save();
 
-//$user = User::find_by_id(2);
+//$user = User::find_by_id(5);
 //$user->password="111";
-//$user->update();
+//$user->save();
 
-$user = User::find_by_id(2);
-$user->delete();
+//$user = User::find_by_id(5);
+//$user->delete();
 
 ?>
 

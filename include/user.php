@@ -40,57 +40,6 @@ class User extends DatabaseObject {
 
         return( !empty( $result_array )) ? array_shift( $result_array ) : false;
     }
-
-
-    //--------------------------------------------------------------------------
-    public function save() {
-        return isset( $this->id ) ? $this->update() : $this->create();
-    }
-
-    // insert the current user into the database
-    //--------------------------------------------------------------------------
-    protected function create() {
-        global $database;
-        $sql = "INSERT INTO users ( username, password, first_name, last_name, email 
-                ) VALUES ( '";
-        $sql .= $database->escape_value( $this->username ) . "', '";
-        $sql .= $database->escape_value( $this->password ) . "', '";
-        $sql .= $database->escape_value( $this->first_name ) . "', '";
-        $sql .= $database->escape_value( $this->last_name ) . "', '";
-        $sql .= $database->escape_value( $this->email ) . "' )";
-        if( $database->query( $sql )) {
-            $this->id = $database->insert_id();
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    //--------------------------------------------------------------------------
-    protected function update() {
-        global $database;
-        $sql = "UPDATE users SET ";
-        $sql .= "username='" . $database->escape_value( $this->username ) . "', ";
-        $sql .= "password='" . $database->escape_value( $this->password ) . "', ";
-        $sql .= "first_name='" . $database->escape_value( $this->first_name ) . "', ";
-        $sql .= "last_name='" . $database->escape_value( $this->last_name ) . "', ";
-        $sql .= "email='" . $database->escape_value( $this->email ) . "' ";
-        $sql .= "WHERE id='" . $database->escape_value( $this->id ) . "' ";
-        $database->query( $sql );
-        return ( $database->affected_rows() == 1 ) ? true : false;
-    }
-
-    // note that the PHP instance will still be available, event though the
-    // object was deleted from the database.
-    //--------------------------------------------------------------------------
-    public function delete() {
-        global $database;
-        $sql = "DELETE FROM users
-                WHERE id=" . $database->escape_value( $this->id ) .
-               " LIMIT 1";
-        $database->query( $sql );
-        return ( $database->affected_rows() == 1 ) ? true : false;
-    }
 }
 
 ?>
