@@ -39,7 +39,7 @@
             $html .= "<a href=\"../index.php?logout=true\">Logout</a>";
             echo $html;
         } else {
-            echo "<a href=\"admin/login.php\">Login</a>";
+            echo "<a href=\"login.php\">Login</a>";
         }
         ?>
         <h1>Photo Share: Admin</h1>
