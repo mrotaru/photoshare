@@ -1,5 +1,6 @@
 <?php
-require_once( LIB_PATH . DS . "logger.php" );
+require_once( "logger.php" );
+require_once( "functions.php" );
 
 // it is not advisable to keep DB objects in sessions because:
 // - they can become stale (the database can be update, therefore
@@ -46,10 +47,23 @@ class Session {
     }
 
     //--------------------------------------------------------------------------
-    public function logout( $user ) {
+    public function logout() {
         unset( $_SESSION[ 'user_id' ] );
         unset( $this->user_id );
         $this->logged_in = false;
+
+        // 2. Unset all the session variables
+        $_SESSION = array();
+
+        // 3. Destroy the session cookie
+        if(isset($_COOKIE[session_name()])) {
+            setcookie(session_name(), '', time()-42000, '/');
+        }
+
+        // 4. Destroy the session
+        session_destroy();
+
+        redirect_to("../public/index.php");
     }
 }
 
