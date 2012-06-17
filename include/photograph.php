@@ -104,6 +104,16 @@ class Photograph extends DatabaseObject {
     public function image_path() {
         return ".." . DS . $this->upload_dir . DS . $this->filename;
     }
+
+    // from: http://www.php.net/manual/en/function.filesize.php#100097 
+    //--------------------------------------------------------------------------
+    function human_readable_size() {
+        $size = $this->size;
+        $units = array(' B', ' KB', ' MB', ' GB', ' TB');
+        for ($i = 0; $size >= 1024 && $i < 4; $i++) $size /= 1024;
+        return round($size, 2).$units[$i];
+    }
+
 }
 
 ?>

@@ -23,7 +23,7 @@ foreach( $photos as $photo ) {
         <tr>
         <td><img src=\"" . $photo->image_path() . "\" width=100 /></td>
         <td>" . $photo->filename . "</td>" . "
-        <td>" . $photo->size . "</td>" . "
+        <td>" . $photo->human_readable_size() . "</td>
         <td>" . $photo->caption . "</td>" . "
         <td><a href=\"#\">Rename</a></td>
         <td><a href=\"#\">Delete</a></td>
