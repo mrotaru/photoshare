@@ -4,7 +4,7 @@ class MySQLDatabase {
 
     // constants
     const DB_SERVER = 'localhost';
-    const DB_USER = 'gallery';
+    const DB_USER = 'imgshare';
     const DB_PASS = 'asdjkl';
     const DB_NAME = 'imgshare';
 

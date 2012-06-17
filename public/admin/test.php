@@ -21,12 +21,12 @@ include_layout_template( "admin_header.php" );
 //    $user->email="john@mail.com";
 //    $user->save();
 
-//$user = User::find_by_id(5);
+//$user = User::find_by_id(8);
 //$user->password="111";
 //$user->save();
 
-//$user = User::find_by_id(5);
-//$user->delete();
+$user = User::find_by_id(8);
+$user->delete();
 
 ?>
 

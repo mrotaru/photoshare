@@ -4,7 +4,7 @@ require_once( LIB_PATH . DS . "database.php" );
 
 class DatabaseObject {
 
-    // returns an array of User objects, with all the users in the current db
+    // returns an array of all the objects in the current db
     //--------------------------------------------------------------------------
     public static function find_all() {
         global $database;
@@ -37,7 +37,7 @@ class DatabaseObject {
         return $object_array;
     }
 
-    // returns an User object with the attributes set from the `record`
+    // returns an object with the attributes set from the `record`
     //--------------------------------------------------------------------------
     private static function instantiate( $record ) {
         $class_name = get_called_class();

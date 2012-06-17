@@ -1,5 +1,18 @@
+--
+-- Create inital database and tables
+--
+
+-- create and start using database
+CREATE DATABASE IF NOT EXISTS imgshare;
 USE imgshare;
 
+-- create database user
+CREATE USER 'imgshare'@'localhost' IDENTIFIED BY 'asdjkl';
+
+-- give all privileges for username-prefix databases
+GRANT ALL PRIVILEGES ON imgshare.* TO 'imgshare'@'localhost';
+
+-- users table
 CREATE TABLE IF NOT EXISTS `users` (
     id int(11) NOT NULL auto_increment,
     username varchar(50) NOT NULL,
@@ -9,6 +22,15 @@ CREATE TABLE IF NOT EXISTS `users` (
     email varchar(30) NOT NULL,
     PRIMARY KEY (id));
 
-GRANT ALL PRIVILEGES ON imgshare.*
-TO 'gallery'@'localhost'
-IDENTIFIED BY 'asdjkl'
+-- photographs table
+CREATE TABLE IF NOT EXISTS `photographs` (
+    id int(11) NOT NULL auto_increment PRIMARY KEY,
+    filename VARCHAR(255) NOT NULL,
+    type VARCHAR(100) NOT NULL,
+    size INT(11) NOT NULL,
+    caption VARCHAR(255) NOT NULL
+);
+
+-- add test users
+INSERT INTO `users` ( username, password, first_name, last_name, email ) VALUES
+( 'derp', 'asdasd', 'Derp', 'Derpowsky', 'derp@gmail.com' );
