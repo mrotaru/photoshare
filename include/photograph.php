@@ -29,6 +29,8 @@ class Photograph extends DatabaseObject {
         UPLOAD_ERR_EXTENSION 	=> "File upload stopped by extension."
     );
 
+    // try and build a Photograph object (set it's attributes ) 
+    // from the $_FILE[] passed as a parameter. Returns true if successful.
     //--------------------------------------------------------------------------
     public function attach_file( $file ) {
         if( !$file || empty( $file ) || !is_array( $file )) {
@@ -46,7 +48,8 @@ class Photograph extends DatabaseObject {
         return true;
     }
 
-    // overriding DatabaseObject::save()
+    // copy the uploaded image to the server's filesystem 
+    // NOTE: overriding DatabaseObject::save()
     //--------------------------------------------------------------------------
     public function save() {
         if( isset( $this->id )) {
@@ -83,7 +86,6 @@ class Photograph extends DatabaseObject {
                 return false;
             }
         }
-
     }
 }
 
