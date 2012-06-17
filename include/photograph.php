@@ -105,6 +105,12 @@ class Photograph extends DatabaseObject {
         return ".." . DS . $this->upload_dir . DS . $this->filename;
     }
 
+    //--------------------------------------------------------------------------
+    public function image_path_abs() {
+        return( SITE_ROOT .DS. 'public' . DS . $this->upload_dir . DS . $this->filename );
+    }
+
+
     // from: http://www.php.net/manual/en/function.filesize.php#100097 
     //--------------------------------------------------------------------------
     function human_readable_size() {
@@ -114,6 +120,14 @@ class Photograph extends DatabaseObject {
         return round($size, 2).$units[$i];
     }
 
+    //--------------------------------------------------------------------------
+    function destroy() {
+        if( $this->delete() ) {
+            return unlink( $this->image_path_abs() ) ? true : false;
+        } else {
+            return false;
+        }
+    }
 }
 
 ?>
