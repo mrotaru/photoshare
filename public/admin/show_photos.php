@@ -21,7 +21,7 @@ echo( "
 foreach( $photos as $photo ) {
     echo( "
         <tr>
-        <td><img src=\"../images/" . $photo->filename . "\" width=100 /></td>
+        <td><img src=\"" . $photo->image_path() . "\" width=100 /></td>
         <td>" . $photo->filename . "</td>" . "
         <td>" . $photo->size . "</td>" . "
         <td>" . $photo->caption . "</td>" . "

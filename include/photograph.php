@@ -99,6 +99,11 @@ class Photograph extends DatabaseObject {
             }
         }
     }
+
+    //--------------------------------------------------------------------------
+    public function image_path() {
+        return ".." . DS . $this->upload_dir . DS . $this->filename;
+    }
 }
 
 ?>
