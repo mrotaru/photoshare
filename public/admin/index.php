@@ -16,5 +16,7 @@ if( !$session->is_logged_in() ) { redirect_to( "login.php" ); }
         echo "User: " . $user->username . "<br/>";
         echo "Name: " . $user->full_name() . "<br/><br/>";
     }
+
+    info_message( $message );
     ?>
 <?php include_layout_template( "admin_footer.php" ); ?>

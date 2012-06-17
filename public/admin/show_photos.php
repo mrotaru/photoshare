@@ -8,6 +8,8 @@ include_layout_template( "admin_header.php" );
 $photos = array();
 $photos = Photograph::find_all();
 
+info_message( $message );
+
 // table header
 echo( "
     <table> 
@@ -26,7 +28,7 @@ foreach( $photos as $photo ) {
         <td>" . $photo->human_readable_size() . "</td>
         <td>" . $photo->caption . "</td>" . "
         <td><a href=\"#\">Rename</a></td>
-        <td><a href=\"#\">Delete</a></td>
+        <td><a href=\"delete.php?id=" . $photo->id . "\">Delete</a></td>
         <td><a href=\"#\">Download</a></td>
         </tr>
         ");

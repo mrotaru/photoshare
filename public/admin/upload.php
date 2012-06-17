@@ -11,7 +11,8 @@ if( !$session->is_logged_in() ) { redirect_to( "login.php" ); }
         $photo->caption = $_POST[ 'caption' ];
         $photo->attach_file( $_FILES[ 'file_upload' ]);
         if( $photo->save() ) {
-            $message = "Photograph successfully uploaded.";
+            $session->message( "Photograph successfully uploaded." );
+            redirect_to( "show_photos.php" );
         } else {
             $message = join( "<br/>", $photo->errors );
         }
@@ -21,6 +22,7 @@ if( !$session->is_logged_in() ) { redirect_to( "login.php" ); }
 
 <?php include_layout_template( "admin_header.php" ); ?>
 <h2>Photo Upload</h2>
+    <?php info_message( $message ); ?>
     <form action="upload.php" enctype="multipart/form-data" method="POST">
         <input type="hidden" name="MAX_FILE_SIZE" value="1000000" />
         <p> <input type="file" name="file_upload" /> </p>
