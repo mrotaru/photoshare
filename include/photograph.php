@@ -66,6 +66,18 @@ class Photograph extends DatabaseObject {
                 return false;
             }
 
+            $upload_path = SITE_ROOT.DS.'public'.DS.$this->upload_dir;
+            // check if destination folder exists, and create it if not
+            if( !is_dir( $upload_path )) {
+                mkdir( $upload_path, 0744 );
+            }
+
+            // check if destination folder is writable
+            if( !is_dir( $upload_path ) || !is_writable( $upload_path )) {
+                $this->errors[] = "The upload folder cannot be created or is not writable.";
+                return false;
+            }
+
             // Determine the target_path
             $target_path = SITE_ROOT .DS. 'public' .DS. $this->upload_dir .DS. $this->filename;
 
