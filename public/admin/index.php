@@ -19,4 +19,8 @@ if( !$session->is_logged_in() ) { redirect_to( "login.php" ); }
 
     info_message( $message );
     ?>
+    <form action="none.php">
+    	<button>Upload</button>
+    	<button>View Photos</button>
+    </form>
 <?php include_layout_template( "admin_footer.php" ); ?>

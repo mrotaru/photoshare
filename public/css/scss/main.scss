@@ -627,26 +627,35 @@ $header-bg:     #263531;
 $header-fg:     #D1D1D1;
 $main-bg:       #D1D1D1;
 $main-fg:       #35262E;
-$link-fg:       #938884;
-$headings-fg:   #5A7467;
+$headers-fg:    #938884;
+$links-fg:      #5A7467;
+
+// error messages
+$error-bg: #FFD2D2;
+$error-border: #F00;
+
+// info messages
+$info-bg: #F0F0F0;
+$info-border: #8B9199;
 
 body {
     background-color: $main-bg;
     color:            $main-fg;
 }
 
-.error {
+@mixin message-base( $bg, $border-color ) {
     padding: 10px;
     margin: 10px;
-    background-color: #FFD2D2;
-    border: 2px solid #F00;
+    background-color: $bg;
+    border: 2px solid $border-color;
+}
+
+.error {
+    @include message-base( $error-bg, $error-border );
 }
 
 .info_message {
-    padding: 10px;
-    margin: 10px;
-    background-color: #F0F0F0;
-    border: 2px solid #8B9199;
+    @include message-base( $info-bg, $info-border );
 }
 
 header {
@@ -655,6 +664,7 @@ header {
     overflow: hidden;
     margin-bottom: 20px;
     padding-left: 10px;
+    border-bottom: 2px solid darken( $header-bg, 30% );
 }
 
 footer {
@@ -664,10 +674,106 @@ footer {
 
 #main {
     height: 450px;
+    width: 80%;
+    clear: both;
+    margin: auto;
 }
 
 textarea {
     font-family: monospace, serif;
     _font-family: 'courier new', monospace;
     font-size: 1em;
+}
+
+fieldset {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #AAA;
+    margin: 10px;
+}
+
+h1, h2, h3, h4 {
+    margin: 0px;
+}
+
+#logo h4 {
+    color: darken( $main-bg, 20 );
+    position: relative;
+    top: -10px;
+}
+
+#logo, header p {
+    float: left;
+}
+
+header form {
+    float: right;
+    margin: 15px;
+}
+
+#actions {
+    float: right;
+}
+
+// adapted from: http://hellohappy.org/css3-buttons/ 
+//------------------------------------------------------------------------------
+@mixin simple-button ( $base ) {
+    //
+    $dark-base: darken( $base, 13.5 ); // #EEE => #CCC
+    $darker-base: darken( $base, 20 ); // #EEE => #BBB
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: $base;
+    background-image: -moz-linear-gradient(center top , $base, $dark-base );
+    border-color: $dark-base $dark-base $darker-base;
+    border-radius: 3px 3px 3px 3px;
+    border-style: solid;
+    border-width: 1px;
+    @if lightness( $base ) < 50 {
+        color: #EEE;
+    } @else {
+        color: #111;
+    }
+    font: bold 11px/1 "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+    padding: 8px 0;
+    text-align: center;
+    text-shadow: 0 1px 0 $base;
+    width: 150px;
+
+    &:hover {
+        background-color: darken( $base, 5.9 ); // #EEE => #dfdfdf ( #DDDDDD );
+        background-image: -moz-linear-gradient( center top , darken( $base, 5.9 ), $darker-base );
+        border-color: $darker-base $darker-base darken( $base, 34 );
+        border-style: solid;
+        border-width: 1px;
+        cursor: pointer;
+        text-shadow: 0 1px 0 darken( $base, 5.9 );
+    }
+    &:active {
+        $even_darker: darken( $base, 26.5 ); // #EEE => #AAA
+        $darkest: darken( $base, 40 ); // #EEE => #888
+        border-color: $even_darker $even_darker $darkest;
+        border-style: solid;
+        border-width: 1px;
+        box-shadow: 0 0 5px 2px $even_darker inset, 0 1px 0 0 $base;
+    }
+}
+
+button, .button {
+    @include simple-button( lighten( $header-bg, 8 ) );
+}
+
+.header-button {
+    @include simple-button( #EEE );
+}
+
+.header-link {
+    color: lighten( $links-fg, 10 );
+    padding: 10px;
+    &:visited {
+        color: lighten( $links-fg, 10 );
+    }
 }
