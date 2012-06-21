@@ -645,7 +645,7 @@ button, .button {
   padding: 8px 0;
   text-align: center;
   text-shadow: 0 1px 0 #374d47;
-  width: 150px;
+  padding: 8px 12px;
 }
 button:hover, .button:hover {
   background-color: #2a3b37;
@@ -680,7 +680,7 @@ button:active, .button:active {
   padding: 8px 0;
   text-align: center;
   text-shadow: 0 1px 0 #eeeeee;
-  width: 150px;
+  padding: 8px 12px;
 }
 .header-button:hover {
   background-color: #dfdfdf;

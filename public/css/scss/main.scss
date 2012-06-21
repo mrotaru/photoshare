@@ -741,7 +741,7 @@ header form {
     padding: 8px 0;
     text-align: center;
     text-shadow: 0 1px 0 $base;
-    width: 150px;
+    padding: 8px 12px;
 
     &:hover {
         background-color: darken( $base, 5.9 ); // #EEE => #dfdfdf ( #DDDDDD );
