@@ -559,14 +559,12 @@ body {
 
 .error {
   padding: 10px;
-  margin: 10px;
   background-color: #ffd2d2;
   border: 2px solid red;
 }
 
 .info_message {
   padding: 10px;
-  margin: 10px;
   background-color: #f0f0f0;
   border: 2px solid #8b9199;
 }
@@ -575,8 +573,6 @@ header {
   background-color: #263531;
   color: #d1d1d1;
   overflow: hidden;
-  margin-bottom: 20px;
-  padding-left: 10px;
   border-bottom: 2px solid black;
 }
 
@@ -587,8 +583,10 @@ footer {
 
 #main {
   height: 450px;
+}
+
+.inside {
   width: 80%;
-  clear: both;
   margin: auto;
 }
 
@@ -704,4 +702,10 @@ button:active, .button:active {
 }
 .header-link:visited {
   color: #719081;
+}
+
+#main .inside {
+  background-color: #DDD;
+  height: 100%;
+  padding: 10px;
 }

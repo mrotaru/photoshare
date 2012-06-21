@@ -29,29 +29,32 @@
          chromium.org/developers/how-tos/chrome-frame-getting-started -->
     <!--[if lt IE 7]><p class="chromeframe">Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
     <header class="clearfix">
-        <div id="logo">
-            <h1>Photo Share</h1>
-            <h4>Upload and share your photos</h4>
-        </div>
-        <div id="actions">
-        <?php
-        global $session;
-        if( $session->is_logged_in() ) {
-            $user = User::find_by_id( $session->user_id );
-            if( !$user ) die( "Cannot find user with id " . $session->user_id . " in the database." );
-            $username = $user->username;
-            $html =  "<p>logged in as: <strong>" . $username . "</strong>";
-            $html .= "<a class=\"header-link\" href=\"../index.php?logout=true\">Logout</a></p>";
-            echo $html;
-        } else {
-            echo "<p><a class=\"header-link\" href=\"login.php\">Login</a><p>";
-        }
-        ?>
-        <form action="search.php">
-        	<input type="text" />
-        	<button class="header-button">Search</button>
-        </form>
-        </div>
+        <div class="inside">
+            <div id="logo">
+                <h1>Photo Share</h1>
+                <h4>Upload and share your photos</h4>
+            </div>
+            <div id="actions">
+                <?php
+                global $session;
+                if( $session->is_logged_in() ) {
+                    $user = User::find_by_id( $session->user_id );
+                    if( !$user ) die( "Cannot find user with id " . $session->user_id . " in the database." );
+                    $username = $user->username;
+                    $html =  "<p>logged in as: <strong>" . $username . "</strong>";
+                    $html .= "<a class=\"header-link\" href=\"../index.php?logout=true\">Logout</a></p>";
+                    echo $html;
+                } else {
+                    echo "<p><a class=\"header-link\" href=\"login.php\">Login</a><p>";
+                }
+                ?>
+                <form action="search.php">
+                    <input type="text" />
+                    <button class="header-button">Search</button>
+                </form>
+            </div><!-- #actions -->
+        </div><!-- .inside -->
     </header>
 
-    <section id="main">
+    <div id="main">
+        <div class="inside">

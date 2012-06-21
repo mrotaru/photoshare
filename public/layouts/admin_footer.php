@@ -9,7 +9,8 @@
     <script src="js/main.js"></script>
     -->
 
-    </section>
+    </div><!-- .inside -->
+    </div><!-- #main -->
     <footer>
         Copyright <?php echo date("Y", time()); ?>, Mihai Rotaru
     </footer>

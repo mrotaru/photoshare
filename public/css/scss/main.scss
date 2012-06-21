@@ -619,7 +619,7 @@ td {
     h3 {
         page-break-after: avoid;
     }
-}
+} // @media print
 
 // Kuler theme: Complementary Shades,  by DanThomson92
 // http://kuler.adobe.com/#themeID/1930041
@@ -645,7 +645,6 @@ body {
 
 @mixin message-base( $bg, $border-color ) {
     padding: 10px;
-    margin: 10px;
     background-color: $bg;
     border: 2px solid $border-color;
 }
@@ -662,8 +661,6 @@ header {
     background-color: $header-bg;
     color:            $header-fg;
     overflow: hidden;
-    margin-bottom: 20px;
-    padding-left: 10px;
     border-bottom: 2px solid darken( $header-bg, 30% );
 }
 
@@ -674,8 +671,10 @@ footer {
 
 #main {
     height: 450px;
+}
+
+.inside {
     width: 80%;
-    clear: both;
     margin: auto;
 }
 
@@ -776,4 +775,10 @@ button, .button {
     &:visited {
         color: lighten( $links-fg, 10 );
     }
+}
+
+#main .inside {
+    background-color: #DDD;
+    height: 100%;
+    padding: 10px;
 }
