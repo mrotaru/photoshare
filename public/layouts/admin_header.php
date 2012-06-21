@@ -33,6 +33,7 @@
             <div id="logo">
                 <h1>Photo Share</h1>
                 <h4>Upload and share your photos</h4>
+                <a href="index.php"><span></span></a>
             </div>
             <div id="actions">
                 <?php

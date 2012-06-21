@@ -710,6 +710,82 @@ header form {
     margin: 15px;
 }
 
+@mixin box-shadow( $properties ) {
+    -webkit-box-shadow: $properties;
+    -moz-box-shadow: $properties;
+    -o-box-shadow: $properties;
+    box-shadow: $properties;
+}
+
+header {
+    @include box-shadow( 0px 2px 5px #555 );
+    z-index: 1;
+    height: 70px;
+    overflow: hidden;
+}
+
+@mixin border-top-left-radius( $properties ) {
+    -webkit-border-top-left-radius: $properties;
+    -moz-border-radius-topleft: $properties;
+    border-top-left-radius: $properties;
+}
+
+@mixin border-top-right-radius( $properties ) {
+    -webkit-border-top-right-radius: $properties;
+    -moz-border-radius-topright: $properties;
+    border-top-right-radius: $properties;
+}
+
+@mixin border-bottom-right-radius( $properties ) {
+    -webkit-border-bottom-right-radius: $properties;
+    -moz-border-radius-bottomright: $properties;
+    border-bottom-right-radius: $properties;
+}
+
+@mixin border-bottom-left-radius( $properties ) {
+    -webkit-border-bottom-left-radius: $properties;
+    -moz-border-radius-bottomleft: $properties;
+    border-bottom-left-radius: $properties;
+}
+
+#logo {
+    float: left;
+    background-color: $header-bg;
+    padding: 5px;
+    position: relative;
+    left: -10px;
+    //border: 2px solid darken( $header-bg, 2 );
+    border-top: 0px;
+    //@include border-bottom-left-radius( 5px );
+    //@include border-bottom-right-radius( 5px );
+    //border-left: 10px solid darken( $header-bg, 10 );
+}
+
+/* from: http://stackoverflow.com/questions/796087/make-a-div-into-a-link */
+#logo a span { 
+    position:absolute; 
+    width:100%;
+    height:100%;
+    top:0;
+    left: 0;
+
+    /* edit: added z-index */
+    z-index: 1;
+
+    /* edit: fixes overlap error in IE7/8, 
+    make sure you have an empty gif */
+background-image: url('empty.gif');
+}
+
+#logo:hover {
+    background-color: lighten( $header-bg, 10 );
+}
+
+#logo:active {
+    background-color: lighten( $header-bg, 20 );
+    top: +2px;
+}
+
 #actions {
     float: right;
 }
@@ -786,6 +862,9 @@ button, .button {
     background-color: #DDD;
     height: 100%;
     padding: 10px;
+    z-index: 2;
+    border-left: 1px solid #CCC;
+    border-right: 1px solid #CCC;
 }
 
 .actions {

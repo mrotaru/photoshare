@@ -622,6 +622,48 @@ header form {
   margin: 15px;
 }
 
+header {
+  -webkit-box-shadow: 0px 2px 5px #555555;
+  -moz-box-shadow: 0px 2px 5px #555555;
+  -o-box-shadow: 0px 2px 5px #555555;
+  box-shadow: 0px 2px 5px #555555;
+  z-index: 1;
+  height: 70px;
+  overflow: hidden;
+}
+
+#logo {
+  float: left;
+  background-color: #263531;
+  padding: 5px;
+  position: relative;
+  left: -10px;
+  border-top: 0px;
+}
+
+/* from: http://stackoverflow.com/questions/796087/make-a-div-into-a-link */
+#logo a span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  /* edit: added z-index */
+  z-index: 1;
+  /* edit: fixes overlap error in IE7/8, 
+  make sure you have an empty gif */
+  background-image: url("empty.gif");
+}
+
+#logo:hover {
+  background-color: #3b534c;
+}
+
+#logo:active {
+  background-color: #517068;
+  top: 2px;
+}
+
 #actions {
   float: right;
 }
@@ -744,6 +786,9 @@ button:active, .button:active {
   background-color: #DDD;
   height: 100%;
   padding: 10px;
+  z-index: 2;
+  border-left: 1px solid #CCC;
+  border-right: 1px solid #CCC;
 }
 
 .actions {
