@@ -638,12 +638,12 @@ button, .button {
   border-radius: 3px 3px 3px 3px;
   border-style: solid;
   border-width: 1px;
-  color: #EEE;
+  color: #EEE !important;
   font: bold 11px/1 "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
-  padding: 8px 0;
   text-align: center;
   text-shadow: 0 1px 0 #374d47;
   padding: 8px 12px;
+  margin: 5px;
 }
 button:hover, .button:hover {
   background-color: #2a3b37;
@@ -673,12 +673,12 @@ button:active, .button:active {
   border-radius: 3px 3px 3px 3px;
   border-style: solid;
   border-width: 1px;
-  color: #111;
+  color: #111 !important;
   font: bold 11px/1 "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
-  padding: 8px 0;
   text-align: center;
   text-shadow: 0 1px 0 #eeeeee;
   padding: 8px 12px;
+  margin: 5px;
 }
 .header-button:hover {
   background-color: #dfdfdf;
@@ -704,8 +704,48 @@ button:active, .button:active {
   color: #719081;
 }
 
+.link-button {
+  -moz-border-bottom-colors: none;
+  -moz-border-image: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  background-color: #374d47;
+  background-image: -moz-linear-gradient(center top, #374d47, #1a2522);
+  border-color: #1a2522 #1a2522 #0c1110;
+  border-radius: 3px 3px 3px 3px;
+  border-style: solid;
+  border-width: 1px;
+  color: #EEE !important;
+  font: bold 11px/1 "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+  text-align: center;
+  text-shadow: 0 1px 0 #374d47;
+  padding: 8px 12px;
+  margin: 5px;
+  text-decoration: none;
+}
+.link-button:hover {
+  background-color: #2a3b37;
+  background-image: -moz-linear-gradient(center top, #2a3b37, #0c1110);
+  border-color: #0c1110 #0c1110 black;
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+  text-shadow: 0 1px 0 #2a3b37;
+}
+.link-button:active {
+  border-color: black black black;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 0 0 5px 2px black inset, 0 1px 0 0 #374d47;
+}
+
 #main .inside {
   background-color: #DDD;
   height: 100%;
   padding: 10px;
+}
+
+.actions {
+  padding: 10px 0px;
 }

@@ -39,5 +39,7 @@ if( !empty( $photos )) {
     echo( "<p>There are no photos to display.</p>" );
 }
 ?>
-
+<div class="actions">
+    <a href="upload.php" class="link-button">Upload photo</a>
+</div>
 <?php include_layout_template( "admin_footer.php" ); ?>
