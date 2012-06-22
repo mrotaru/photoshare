@@ -20,6 +20,7 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
 
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/fontsquirrel-admin.css">
 
     <!-- All JavaScript at the bottom, except this Modernizr build. -->
     <script src="js/vendor/modernizr.js"></script>
@@ -31,7 +32,7 @@
     <header class="clearfix">
         <div class="inside">
             <div id="logo">
-                <h1>Photo Share</h1>
+                <h1><span class="first-word">Photo</span> Share</h1>
                 <h4>Upload and share your photos</h4>
                 <a href="index.php"><span></span></a>
             </div>

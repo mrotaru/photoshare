@@ -693,6 +693,7 @@ fieldset {
 
 h1, h2, h3, h4 {
     margin: 0px;
+    font-family: "BlanchCaps";
 }
 
 #logo h4 {
@@ -751,14 +752,15 @@ header {
 #logo {
     float: left;
     background-color: $header-bg;
-    padding: 5px;
+    padding: 0px 5px;
     position: relative;
     left: -10px;
-    //border: 2px solid darken( $header-bg, 2 );
     border-top: 0px;
-    //@include border-bottom-left-radius( 5px );
-    //@include border-bottom-right-radius( 5px );
-    //border-left: 10px solid darken( $header-bg, 10 );
+    font: small-caps 30px "BlanchCaps";
+}
+
+.first-word {
+    color: lighten( $links-fg, 20 );
 }
 
 /* from: http://stackoverflow.com/questions/796087/make-a-div-into-a-link */
@@ -863,7 +865,6 @@ button, .button {
     background-color: #DDD;
     height: 100%;
     padding: 10px;
-    z-index: 2;
     border-left: 1px solid #CCC;
     border-right: 1px solid #CCC;
 }
