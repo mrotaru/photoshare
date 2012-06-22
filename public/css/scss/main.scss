@@ -815,6 +815,7 @@ background-image: url('empty.gif');
     font: bold 11px/1 "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
     text-align: center;
     text-shadow: 0 1px 0 $base;
+    text-decoration: none;
     padding: 8px 12px;
     margin: 5px;
 
@@ -869,4 +870,9 @@ button, .button {
 
 .actions {
     padding: 10px 0px;
+}
+
+// hide the file input, because it cannot be styled
+#file_upload {
+    opacity: 0;
 }

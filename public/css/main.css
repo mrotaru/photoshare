@@ -684,6 +684,7 @@ button, .button {
   font: bold 11px/1 "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
   text-align: center;
   text-shadow: 0 1px 0 #374d47;
+  text-decoration: none;
   padding: 8px 12px;
   margin: 5px;
 }
@@ -719,6 +720,7 @@ button:active, .button:active {
   font: bold 11px/1 "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
   text-align: center;
   text-shadow: 0 1px 0 #eeeeee;
+  text-decoration: none;
   padding: 8px 12px;
   margin: 5px;
 }
@@ -762,6 +764,7 @@ button:active, .button:active {
   font: bold 11px/1 "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
   text-align: center;
   text-shadow: 0 1px 0 #374d47;
+  text-decoration: none;
   padding: 8px 12px;
   margin: 5px;
   text-decoration: none;
@@ -793,4 +796,8 @@ button:active, .button:active {
 
 .actions {
   padding: 10px 0px;
+}
+
+#file_upload {
+  opacity: 0;
 }
