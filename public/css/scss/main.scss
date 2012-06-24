@@ -638,9 +638,14 @@ $error-border: #F00;
 $info-bg: #F0F0F0;
 $info-border: #8B9199;
 
+html {
+    height: 100%;
+}
+
 body {
     background-color: $main-bg;
     color:            $main-fg;
+    height: 100%;
 }
 
 @mixin message-base( $bg, $border-color ) {
@@ -670,7 +675,12 @@ footer {
 }
 
 #main {
-    height: 450px;
+    // min-height
+    // from: http://css-tricks.com/snippets/css/cross-browser-min-height/
+    // except, removed important; it can lead to hard-to-find bugs
+    // http://stackoverflow.com/questions/11179799/inner-div-100-height-not-working-inside-a-div-with-min-height
+    min-height: 70%; 
+    height: auto; 
 }
 
 .inside {
@@ -785,7 +795,7 @@ background-image: url('empty.gif');
 
 #logo:active {
     background-color: lighten( $header-bg, 20 );
-    top: +2px;
+    top: +1px;
 }
 
 #actions {
@@ -863,10 +873,10 @@ button, .button {
 
 #main .inside {
     background-color: #DDD;
-    height: 100%;
     padding: 10px;
     border-left: 1px solid #CCC;
     border-right: 1px solid #CCC;
+    height: 100%;
 }
 
 .actions {

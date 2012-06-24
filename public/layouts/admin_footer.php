@@ -7,7 +7,7 @@
 
     </div><!-- .inside -->
     </div><!-- #main -->
-    <footer>
+    <footer class="inside">
         Copyright <?php echo date("Y", time()); ?>, Mihai Rotaru
     </footer>
     </body>

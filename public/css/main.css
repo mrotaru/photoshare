@@ -552,9 +552,14 @@ td {
     page-break-after: avoid;
   }
 }
+html {
+  height: 100%;
+}
+
 body {
   background-color: #d1d1d1;
   color: #35262e;
+  height: 100%;
 }
 
 .error {
@@ -582,7 +587,8 @@ footer {
 }
 
 #main {
-  height: 450px;
+  min-height: 70%;
+  height: auto;
 }
 
 .inside {
@@ -667,7 +673,7 @@ header {
 
 #logo:active {
   background-color: #517068;
-  top: 2px;
+  top: 1px;
 }
 
 #actions {
@@ -793,10 +799,10 @@ button:active, .button:active {
 
 #main .inside {
   background-color: #DDD;
-  height: 100%;
   padding: 10px;
   border-left: 1px solid #CCC;
   border-right: 1px solid #CCC;
+  height: 100%;
 }
 
 .actions {
