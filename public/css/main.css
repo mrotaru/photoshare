@@ -582,8 +582,26 @@ header {
 }
 
 footer {
-  background-color: #263531;
-  color: #d1d1d1;
+  color: #35262e;
+  min-height: 100px;
+  padding: 10px;
+}
+
+footer li {
+  list-style: none outside none;
+}
+
+.footer-nav-left {
+  float: left;
+  width: 400px;
+}
+
+.footer-nav {
+  float: right;
+}
+
+footer ul {
+  float: left;
 }
 
 #main {
@@ -803,12 +821,21 @@ button:active, .button:active {
   border-left: 1px solid #CCC;
   border-right: 1px solid #CCC;
   height: 100%;
+  padding-bottom: 100px;
 }
 
 .actions {
   padding: 10px 0px;
 }
 
-#file_upload {
-  opacity: 0;
+#file_name {
+  background-color: #DDD;
+}
+
+.w200px {
+  width: 200px;
+}
+
+form label {
+  float: left;
 }

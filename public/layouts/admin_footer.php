@@ -7,8 +7,28 @@
 
     </div><!-- .inside -->
     </div><!-- #main -->
-    <footer class="inside">
-        Copyright <?php echo date("Y", time()); ?>, Mihai Rotaru
+    <footer class="inside clearfix">
+        <div class="upper-footer">
+            <ul class="footer-nav">
+                <h4>Contact</h4>
+            	<li>Facebook</li>
+            	<li>Twitter</li>
+            </ul>
+            <ul class="footer-nav">
+                <h4>Second Column</h4>
+            	<li>Link 1</li>
+            	<li>Second</li>
+            	<li>Fasd asd</li>
+            </ul>
+            
+        </div>
+        <div class="footer-nav-left">
+            Copyright &copy; <?php echo date("Y", time()); ?>, Mihai Rotaru
+            <p>
+            This website uses PHP, HTML5 si CSS3. Coffeescript is used for
+            accessing JQuery functionality.
+            </p>
+        </div>
     </footer>
     </body>
 </html>

@@ -670,8 +670,33 @@ header {
 }
 
 footer {
-    background-color: $header-bg;
-    color:            $header-fg;
+    //background-color: $header-bg;
+    color:            $main-fg;
+    min-height: 100px;
+    padding: 10px;
+}
+
+footer li {
+    list-style: none outside none;
+}
+
+.footer-nav-left {
+    float: left;
+    width: 400px;
+}
+
+.footer-nav {
+    float: right;
+}
+
+.upper-footer {
+}
+
+.lower-footer {
+}
+
+footer ul {
+    float: left;
 }
 
 #main {
@@ -681,6 +706,7 @@ footer {
     // http://stackoverflow.com/questions/11179799/inner-div-100-height-not-working-inside-a-div-with-min-height
     min-height: 70%; 
     height: auto; 
+    //height: 70%;
 }
 
 .inside {
@@ -877,13 +903,19 @@ button, .button {
     border-left: 1px solid #CCC;
     border-right: 1px solid #CCC;
     height: 100%;
+    padding-bottom: 100px;
 }
 
 .actions {
     padding: 10px 0px;
 }
 
-// hide the file input, because it cannot be styled
-#file_upload {
-    opacity: 0;
+#file_name {
+    background-color: #DDD;
 }
+
+.w200px {
+    width: 200px;
+}
+
+form label { float: left; }

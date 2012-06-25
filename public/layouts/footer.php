@@ -7,7 +7,24 @@
 
     </div><!-- .inside -->
     </div><!-- #main -->
-    <footer>
+    <footer class="inside clearfix">
+        <div class="upper-footer">
+            <ul class="footer-nav">
+                <h4>Links</h4>
+            	<li>Link 1</li>
+            	<li>Second</li>
+            	<li>Third</li>
+            	<li>Fasd asd</li>
+            </ul>
+            <ul class="footer-nav">
+                <h4>Second Column</h4>
+            	<li>Link 1</li>
+            	<li>Second</li>
+            	<li>Fasd asd</li>
+            </ul>
+            
+        </div>
+        <div class="lower-footer">
         Copyright <?php echo date("Y", time()); ?>, Mihai Rotaru
     </footer>
     </body>
