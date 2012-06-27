@@ -1,4 +1,4 @@
-@charset "IBM437";
+@charset "UTF-8";
 /* {{{ html5-boilerplate - RESET */
 /*
  * HTML5 Boilerplate
@@ -614,7 +614,7 @@ button:active, .button:active {
 }
 
 /* }}} ui - buttons */
-/* {{{ ui - alerts */
+/* {{{Ã¡ui - alerts */
 .error {
   padding: 10px;
   background-color: #ffd2d2;
@@ -627,7 +627,7 @@ button:active, .button:active {
   border: 2px solid #8b9199;
 }
 
-/* }}} ui- alerts */
+/* }}} ui - alerts */
 /* {{{ header */
 header {
   background-color: #263531;
