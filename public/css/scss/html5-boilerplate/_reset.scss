@@ -1,0 +1,158 @@
+/*
+ * HTML5 Boilerplate
+ *
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ *
+ * Detailed information about this CSS: h5bp.com/css
+ *
+ * ==|== normalize ==========================================================
+ */
+
+
+/* =============================================================================
+   HTML5 display definitions
+   ========================================================================== */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+    display: block;
+}
+
+audio,
+canvas,
+video {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+audio:not([controls]) {
+    display: none;
+}
+
+[hidden] {
+    display: none;
+}
+
+
+/* =============================================================================
+   Base
+   ========================================================================== */
+
+/*
+ * 1. Correct text resizing oddly in IE6/7 when body font-size is set using em units
+ * 2. Prevent iOS text size adjust on device orientation change, without disabling user zoom: h5bp.com/g
+ */
+
+html {
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+    font-family: sans-serif;
+    color: #222;
+}
+
+body {
+    margin: 0;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection declarations have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+
+/* =============================================================================
+   Links
+   ========================================================================== */
+
+a {
+    color: #00e;
+}
+
+a:visited {
+    color: #551a8b;
+}
+
+a:hover {
+    color: #06e;
+}
+
+a:focus {
+    outline: thin dotted;
+}
+
+/*
+ * Improve readability when focused and hovered in all browsers: h5bp.com/h
+ */
+
+a:hover,
+a:active {
+    outline: 0;
+}
+
+
+/* =============================================================================
+   Embedded content
+   ========================================================================== */
+
+/*
+ * 1. Improve image quality when scaled in IE7: h5bp.com/d
+ * 2. Remove the gap between images and borders on image containers: h5bp.com/i/440
+ */
+
+img {
+    border: 0;
+    vertical-align: middle;
+    -ms-interpolation-mode: bicubic;
+}
+
+/*
+ * Correct overflow not hidden in IE9
+ */
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+
+/* =============================================================================
+   Figures
+   ========================================================================== */
+
+figure {
+    margin: 0;
+}
+
+

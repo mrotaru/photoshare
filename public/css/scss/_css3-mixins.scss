@@ -1,0 +1,32 @@
+/* {{{ CSS3 mixins */
+@mixin box-shadow( $properties ) {
+    -webkit-box-shadow: $properties;
+    -moz-box-shadow: $properties;
+    -o-box-shadow: $properties;
+    box-shadow: $properties;
+}
+
+@mixin border-top-left-radius( $properties ) {
+    -webkit-border-top-left-radius: $properties;
+    -moz-border-radius-topleft: $properties;
+    border-top-left-radius: $properties;
+}
+
+@mixin border-top-right-radius( $properties ) {
+    -webkit-border-top-right-radius: $properties;
+    -moz-border-radius-topright: $properties;
+    border-top-right-radius: $properties;
+}
+
+@mixin border-bottom-right-radius( $properties ) {
+    -webkit-border-bottom-right-radius: $properties;
+    -moz-border-radius-bottomright: $properties;
+    border-bottom-right-radius: $properties;
+}
+
+@mixin border-bottom-left-radius( $properties ) {
+    -webkit-border-bottom-left-radius: $properties;
+    -moz-border-radius-bottomleft: $properties;
+    border-bottom-left-radius: $properties;
+}
+/* }}} CSS3 mixins */

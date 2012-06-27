@@ -20,7 +20,7 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
 
     <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/fontsquirrel-admin.css">
+    <link rel="stylesheet" href="../css/fontsquirrel/blanch.css">
 
     <!-- All JavaScript at the bottom, except this Modernizr build. -->
     <script src="../js/vendor/modernizr.js"></script>
