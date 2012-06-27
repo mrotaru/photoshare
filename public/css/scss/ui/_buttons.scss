@@ -48,7 +48,29 @@
     }
 }
 
-.simple-button {
+.simple-grey-button {
     @include simple-button( #EEE );
 }
+
+button, .button {
+    @include simple-button( lighten( $header-bg, 8 ) );
+}
+
+.header-button {
+    @include simple-button( #EEE );
+}
+
+.header-link {
+    color: lighten( $links-fg, 10 );
+    padding: 10px;
+    &:visited {
+        color: lighten( $links-fg, 10 );
+    }
+}
+
+.link-button {
+    @include simple-button( lighten( $header-bg, 8 ) );
+    text-decoration: none;
+}
+
 /* }}} ui - buttons */

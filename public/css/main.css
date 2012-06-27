@@ -1,3 +1,4 @@
+@charset "IBM437";
 /* {{{ html5-boilerplate - RESET */
 /*
  * HTML5 Boilerplate
@@ -455,8 +456,11 @@ nav ol {
 /* }}} html5-boilerplate - TEXT */
 /* {{{ CSS3 mixins */
 /* }}} CSS3 mixins */
+/* ==|== primary styles =====================================================*/
+/* {{{ colors */
+/* }}} colors */
 /* {{{ ui - buttons */
-.simple-button {
+.simple-grey-button {
   -moz-border-bottom-colors: none;
   -moz-border-image: none;
   -moz-border-left-colors: none;
@@ -476,7 +480,7 @@ nav ol {
   padding: 8px 12px;
   margin: 5px;
 }
-.simple-button:hover {
+.simple-grey-button:hover {
   background-color: #dfdfdf;
   background-image: -moz-linear-gradient(center top, #dfdfdf, #bbbbbb);
   border-color: #bbbbbb #bbbbbb #979797;
@@ -485,161 +489,11 @@ nav ol {
   cursor: pointer;
   text-shadow: 0 1px 0 #dfdfdf;
 }
-.simple-button:active {
+.simple-grey-button:active {
   border-color: #aaaaaa #aaaaaa #888888;
   border-style: solid;
   border-width: 1px;
   box-shadow: 0 0 5px 2px #aaaaaa inset, 0 1px 0 0 #eeeeee;
-}
-
-/* }}} ui - buttons */
-/* ==|== primary styles =====================================================
-   Author:
-   ========================================================================== */
-html {
-  height: 100%;
-}
-
-body {
-  background-color: #d1d1d1;
-  color: #35262e;
-  height: 100%;
-}
-
-.error {
-  padding: 10px;
-  background-color: #ffd2d2;
-  border: 2px solid red;
-}
-
-.info_message {
-  padding: 10px;
-  background-color: #f0f0f0;
-  border: 2px solid #8b9199;
-}
-
-header {
-  background-color: #263531;
-  color: #d1d1d1;
-  overflow: hidden;
-  border-bottom: 2px solid black;
-}
-
-footer {
-  color: #35262e;
-  min-height: 100px;
-  padding: 10px;
-}
-
-footer li {
-  list-style: none outside none;
-}
-
-.footer-nav-left {
-  float: left;
-  width: 400px;
-}
-
-.footer-nav {
-  float: right;
-}
-
-footer ul {
-  float: left;
-}
-
-#main {
-  min-height: 70%;
-  height: auto;
-}
-
-.inside {
-  width: 80%;
-  margin: auto;
-}
-
-textarea {
-  font-family: monospace, serif;
-  _font-family: 'courier new', monospace;
-  font-size: 1em;
-}
-
-fieldset {
-  width: 80%;
-  padding: 10px;
-  border: 1px solid #AAA;
-  margin: 10px;
-}
-
-h1, h2, h3, h4 {
-  margin: 0px;
-  font-family: "BlanchCaps";
-}
-
-#logo h4 {
-  color: #9e9e9e;
-  position: relative;
-  top: -10px;
-}
-
-#logo, header p {
-  float: left;
-}
-
-header form {
-  float: right;
-  margin: 15px;
-}
-
-header {
-  -webkit-box-shadow: 0px 2px 5px #555555;
-  -moz-box-shadow: 0px 2px 5px #555555;
-  -o-box-shadow: 0px 2px 5px #555555;
-  box-shadow: 0px 2px 5px #555555;
-  z-index: 1;
-  height: 70px;
-  overflow: hidden;
-}
-
-#logo {
-  float: left;
-  background-color: #263531;
-  padding: 0px 5px;
-  position: relative;
-  left: -10px;
-  border-top: 0px;
-  font: small-caps 30px "BlanchCaps";
-}
-
-.first-word {
-  color: #8da79a;
-}
-
-/* from: http://stackoverflow.com/questions/796087/make-a-div-into-a-link */
-#logo a span {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  /* edit: added z-index */
-  z-index: 1;
-  /* edit: fixes overlap error in IE7/8, 
-  make sure you have an empty gif */
-  background-image: url("empty.gif");
-}
-
-#logo:hover {
-  background-color: #3b534c;
-}
-
-#logo:active {
-  background-color: #517068;
-  top: 1px;
-}
-
-#actions {
-  float: right;
 }
 
 button, .button {
@@ -757,6 +611,160 @@ button:active, .button:active {
   border-style: solid;
   border-width: 1px;
   box-shadow: 0 0 5px 2px black inset, 0 1px 0 0 #374d47;
+}
+
+/* }}} ui - buttons */
+/* {{{ ui - alerts */
+.error {
+  padding: 10px;
+  background-color: #ffd2d2;
+  border: 2px solid red;
+}
+
+.info_message {
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: 2px solid #8b9199;
+}
+
+/* }}} ui- alerts */
+/* {{{ header */
+header {
+  background-color: #263531;
+  color: #d1d1d1;
+  overflow: hidden;
+  border-bottom: 2px solid black;
+}
+
+header form {
+  float: right;
+  margin: 15px;
+}
+
+header {
+  -webkit-box-shadow: 0px 2px 5px #555555;
+  -moz-box-shadow: 0px 2px 5px #555555;
+  -o-box-shadow: 0px 2px 5px #555555;
+  box-shadow: 0px 2px 5px #555555;
+  z-index: 1;
+  height: 70px;
+  overflow: hidden;
+}
+
+/* {{{ logo */
+#logo h4 {
+  color: #9e9e9e;
+  position: relative;
+  top: -10px;
+}
+
+#logo, header p {
+  float: left;
+}
+
+#logo {
+  float: left;
+  background-color: #263531;
+  padding: 0px 5px;
+  position: relative;
+  left: -10px;
+  border-top: 0px;
+  font: small-caps 30px "BlanchCaps";
+}
+
+/* from: http://stackoverflow.com/questions/796087/make-a-div-into-a-link */
+#logo a span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  /* edit: added z-index */
+  z-index: 1;
+  /* edit: fixes overlap error in IE7/8, make sure you have an empty gif */
+  background-image: url("empty.gif");
+}
+
+#logo:hover {
+  background-color: #3b534c;
+}
+
+#logo:active {
+  background-color: #517068;
+  top: 1px;
+}
+
+/* }}} logo */
+/* }}} header */
+/* {{{ footer */
+footer {
+  color: #35262e;
+  min-height: 100px;
+  padding: 10px;
+}
+
+footer li {
+  list-style: none outside none;
+}
+
+.footer-nav-left {
+  float: left;
+  width: 400px;
+}
+
+.footer-nav {
+  float: right;
+}
+
+footer ul {
+  float: left;
+}
+
+/* }}} footer */
+html {
+  height: 100%;
+}
+
+body {
+  background-color: #d1d1d1;
+  color: #35262e;
+  height: 100%;
+}
+
+#main {
+  min-height: 70%;
+  height: auto;
+}
+
+.inside {
+  width: 80%;
+  margin: auto;
+}
+
+textarea {
+  font-family: monospace, serif;
+  _font-family: 'courier new', monospace;
+  font-size: 1em;
+}
+
+fieldset {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #AAA;
+  margin: 10px;
+}
+
+h1, h2, h3, h4 {
+  margin: 0px;
+  font-family: "BlanchCaps";
+}
+
+.first-word {
+  color: #8da79a;
+}
+
+#actions {
+  float: right;
 }
 
 #main .inside {

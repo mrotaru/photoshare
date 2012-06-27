@@ -1,3 +1,17 @@
 /* {{{ ui - alerts */
 
+@mixin message-base( $bg, $border-color ) {
+    padding: 10px;
+    background-color: $bg;
+    border: 2px solid $border-color;
+}
+
+.error {
+    @include message-base( $error-bg, $error-border );
+}
+
+.info_message {
+    @include message-base( $info-bg, $info-border );
+}
+
 /* }}} ui- alerts */
