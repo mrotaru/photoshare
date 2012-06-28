@@ -461,6 +461,8 @@ nav ol {
 /* }}} colors */
 /* {{{ tables */
 .photos {
+  table-layout: fixed;
+  width: 100%;
   border: 2px solid #d1d1d1;
   margin: 20px 0px;
   border-collapse: collapse;
@@ -476,9 +478,34 @@ nav ol {
 }
 
 .photos td {
-  border: 1px solid white;
+  border: 1px solid #DDD;
   vertical-align: middle;
   padding: 0.3em 1em;
+  overflow: hidden;
+}
+
+.th-image {
+  width: 100px;
+}
+
+.th-name {
+  width: 200px;
+}
+
+.th-size {
+  width: 50px;
+}
+
+.th-caption {
+  width: 250px;
+}
+
+.th-actions {
+  width: 300px;
+}
+
+td a {
+  float: left;
 }
 
 /* }}} tables */

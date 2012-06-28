@@ -16,23 +16,23 @@ if( !empty( $photos )) {
     echo( "
         <table class=\"photos\"> 
         <tr>
-        <th></th>
-        <th>Name</th>
-        <th>Size</th>
-        <th>Caption</th>
-        <th colspan='3'>Actions</th>
+        <th class=\"th-image\"></th>
+        <th class=\"th-name\">Name</th>
+        <th class=\"th-size\">Size</th>
+        <th class=\"th-caption\">Caption</th>
+        <th class=\"th-actions\">Actions</th>
         </tr>
         " );
     foreach( $photos as $photo ) {
         echo( "
             <tr>
-            <td><img src=\"" . $photo->image_path() . "\" width=100 /></td>
+            <td><img src=\"" . $photo->image_path() . "\" width=\"100px\" /></td>
             <td>" . $photo->filename . "</td>" . "
             <td>" . $photo->human_readable_size() . "</td>
             <td>" . $photo->caption . "</td>" . "
-            <td><a href=\"#\" class=\"rename-button\"><span data-icon=\"$\"></span>Rename</a></td>
-            <td><a href=\"delete.php?id=" . $photo->id . "\" class=\"delete-button\"><span data-icon=\"%\"></span>Delete</a></td>
-            <td><a href=\"#\" class=\"download-button\"><span data-icon=\"&\"></span>Download</a></td>
+            <td><a href=\"#\" class=\"rename-button\"><span data-icon=\"$\"></span>Rename</a>
+            <a href=\"delete.php?id=" . $photo->id . "\" class=\"delete-button\"><span data-icon=\"%\"></span>Delete</a>
+            <a href=\"#\" class=\"download-button\"><span data-icon=\"&\"></span>Download</a></td>
             </tr>
             ");
     }

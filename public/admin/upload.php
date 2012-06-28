@@ -6,17 +6,20 @@ if( !$session->is_logged_in() ) { redirect_to( "login.php" ); }
 <?php
     $max_file_size = 1000000;
     $message = "";
+    info_message( print_r( $_POST, true ));
+
     if( isset( $_POST[ 'submit' ] )) {
         $photo = new Photograph();
         $photo->caption = $_POST[ 'caption' ];
         $photo->attach_file( $_FILES[ 'file_upload' ]);
         if( $photo->save() ) {
             $session->message( "Photograph successfully uploaded." );
-            redirect_to( "show_photos.php" );
+            //redirect_to( "show_photos.php" );
         } else {
             $message = join( "<br/>", $photo->errors );
         }
     }
+    else $message = "Page has not been submitted.";
 ?>
 
 
@@ -36,7 +39,7 @@ if( !$session->is_logged_in() ) { redirect_to( "login.php" ); }
                 <a id="browse_button" class="button">Browse...</a>
                 <input id="file_upload" type="file" name="file_upload" class="hidden" /> </p>
             <p> Caption: <input type="text" name="caption" value="" /></p>
-            <button class="button" type="submit" name="submit" value="Upload"><span data-icon="'"></span> Upload</button>
+            <input class="button" type="submit" name="submit" value="Upload"><!--<span data-icon="'"></span> Upload</button>-->
         </fieldset>
     </form>
 <?php include_layout_template( "admin_footer.php" ); ?>
