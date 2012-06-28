@@ -1,0 +1,33 @@
+/* Use this CSS file if you need to support IE 7 and IE 6. */
+
+.icon-home { *zoom: expression( this.runtimeStyle['zoom'] = "1", this.innerHTML = '&#x0021;'); font-family: 'IcoMoon'}
+.icon-search { *zoom: expression( this.runtimeStyle['zoom'] = "1", this.innerHTML = '&#x0022;'); font-family: 'IcoMoon'}
+.icon-comments { *zoom: expression( this.runtimeStyle['zoom'] = "1", this.innerHTML = '&#x0023;'); font-family: 'IcoMoon'}
+.icon-pencil { *zoom: expression( this.runtimeStyle['zoom'] = "1", this.innerHTML = '&#x0024;'); font-family: 'IcoMoon'}
+.icon-remove { *zoom: expression( this.runtimeStyle['zoom'] = "1", this.innerHTML = '&#x0025;'); font-family: 'IcoMoon'}
+.icon-download { *zoom: expression( this.runtimeStyle['zoom'] = "1", this.innerHTML = '&#x0026;'); font-family: 'IcoMoon'}
+.icon-upload { *zoom: expression( this.runtimeStyle['zoom'] = "1", this.innerHTML = '&#x0027;'); font-family: 'IcoMoon'}
+.icon-arrow-right { *zoom: expression( this.runtimeStyle['zoom'] = "1", this.innerHTML = '&#x0028;'); font-family: 'IcoMoon'}
+.icon-arrow-down { *zoom: expression( this.runtimeStyle['zoom'] = "1", this.innerHTML = '&#x0029;'); font-family: 'IcoMoon'}
+.icon-arrow-left { *zoom: expression( this.runtimeStyle['zoom'] = "1", this.innerHTML = '&#x002a;'); font-family: 'IcoMoon'}
+.icon-arrow-up { *zoom: expression( this.runtimeStyle['zoom'] = "1", this.innerHTML = '&#x002b;'); font-family: 'IcoMoon'}
+.icon-left-to-right { *zoom: expression( this.runtimeStyle['zoom'] = "1", this.innerHTML = '&#x002c;'); font-family: 'IcoMoon'}
+.icon-out { *zoom: expression( this.runtimeStyle['zoom'] = "1", this.innerHTML = '&#x002d;'); font-family: 'IcoMoon'}
+.icon-out-2 { *zoom: expression( this.runtimeStyle['zoom'] = "1", this.innerHTML = '&#x002e;'); font-family: 'IcoMoon'}
+.icon-github { *zoom: expression( this.runtimeStyle['zoom'] = "1", this.innerHTML = '&#x002f;'); font-family: 'IcoMoon'}
+.icon-star { *zoom: expression( this.runtimeStyle['zoom'] = "1", this.innerHTML = '&#x0030;'); font-family: 'IcoMoon'}
+.icon-mail { *zoom: expression( this.runtimeStyle['zoom'] = "1", this.innerHTML = '&#x0031;'); font-family: 'IcoMoon'}
+.icon-phone { *zoom: expression( this.runtimeStyle['zoom'] = "1", this.innerHTML = '&#x0032;'); font-family: 'IcoMoon'}
+.icon-picture { *zoom: expression( this.runtimeStyle['zoom'] = "1", this.innerHTML = '&#x0033;'); font-family: 'IcoMoon'}
+.icon-cog { *zoom: expression( this.runtimeStyle['zoom'] = "1", this.innerHTML = '&#x0034;'); font-family: 'IcoMoon'}
+.icon-exit { *zoom: expression( this.runtimeStyle['zoom'] = "1", this.innerHTML = '&#x0035;'); font-family: 'IcoMoon'}
+.icon-enter { *zoom: expression( this.runtimeStyle['zoom'] = "1", this.innerHTML = '&#x0036;'); font-family: 'IcoMoon'}
+.icon-facebook { *zoom: expression( this.runtimeStyle['zoom'] = "1", this.innerHTML = '&#x0037;'); font-family: 'IcoMoon'}
+.icon-twitter { *zoom: expression( this.runtimeStyle['zoom'] = "1", this.innerHTML = '&#x0038;'); font-family: 'IcoMoon'}
+.icon-feed { *zoom: expression( this.runtimeStyle['zoom'] = "1", this.innerHTML = '&#x0039;'); font-family: 'IcoMoon'}
+.icon-mobile { *zoom: expression( this.runtimeStyle['zoom'] = "1", this.innerHTML = '&#x003c;'); font-family: 'IcoMoon'}
+.icon-help { *zoom: expression( this.runtimeStyle['zoom'] = "1", this.innerHTML = '&#x003a;'); font-family: 'IcoMoon'}
+.icon-info-circle { *zoom: expression( this.runtimeStyle['zoom'] = "1", this.innerHTML = '&#x003b;'); font-family: 'IcoMoon'}
+.icon-close { *zoom: expression( this.runtimeStyle['zoom'] = "1", this.innerHTML = '&#x003d;'); font-family: 'IcoMoon'}
+.icon-warning { *zoom: expression( this.runtimeStyle['zoom'] = "1", this.innerHTML = '&#x003e;'); font-family: 'IcoMoon'}
+.icon-plus { *zoom: expression( this.runtimeStyle['zoom'] = "1", this.innerHTML = '&#x003f;'); font-family: 'IcoMoon'}

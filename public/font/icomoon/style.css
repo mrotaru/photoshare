@@ -1,0 +1,117 @@
+@font-face {
+	font-family: 'IcoMoon';
+	src: url('fonts/IcoMoon.eot');
+	src: url('fonts/IcoMoon.eot?#iefix') format('embedded-opentype'),
+		url('fonts/IcoMoon.svg#IcoMoon') format('svg'),
+		url('fonts/IcoMoon.woff') format('woff'),
+		url('fonts/IcoMoon.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+	font-family: 'IcoMoon';
+	content: attr(data-icon);
+	speak: none;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+[class^="icon-"]:before, [class*=" icon-"]:before {
+	font-family: 'IcoMoon';
+	font-style: normal;
+	speak: none;
+}
+.icon-home:before {
+	content: "\0021";
+}
+.icon-search:before {
+	content: "\0022";
+}
+.icon-comments:before {
+	content: "\0023";
+}
+.icon-pencil:before {
+	content: "\0024";
+}
+.icon-remove:before {
+	content: "\0025";
+}
+.icon-download:before {
+	content: "\0026";
+}
+.icon-upload:before {
+	content: "\0027";
+}
+.icon-arrow-right:before {
+	content: "\0028";
+}
+.icon-arrow-down:before {
+	content: "\0029";
+}
+.icon-arrow-left:before {
+	content: "\002a";
+}
+.icon-arrow-up:before {
+	content: "\002b";
+}
+.icon-left-to-right:before {
+	content: "\002c";
+}
+.icon-out:before {
+	content: "\002d";
+}
+.icon-out-2:before {
+	content: "\002e";
+}
+.icon-github:before {
+	content: "\002f";
+}
+.icon-star:before {
+	content: "\0030";
+}
+.icon-mail:before {
+	content: "\0031";
+}
+.icon-phone:before {
+	content: "\0032";
+}
+.icon-picture:before {
+	content: "\0033";
+}
+.icon-cog:before {
+	content: "\0034";
+}
+.icon-exit:before {
+	content: "\0035";
+}
+.icon-enter:before {
+	content: "\0036";
+}
+.icon-facebook:before {
+	content: "\0037";
+}
+.icon-twitter:before {
+	content: "\0038";
+}
+.icon-feed:before {
+	content: "\0039";
+}
+.icon-mobile:before {
+	content: "\003c";
+}
+.icon-help:before {
+	content: "\003a";
+}
+.icon-info-circle:before {
+	content: "\003b";
+}
+.icon-close:before {
+	content: "\003d";
+}
+.icon-warning:before {
+	content: "\003e";
+}
+.icon-plus:before {
+	content: "\003f";
+}

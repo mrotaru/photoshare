@@ -36,7 +36,7 @@ if( !$session->is_logged_in() ) { redirect_to( "login.php" ); }
                 <a id="browse_button" class="button">Browse...</a>
                 <input id="file_upload" type="file" name="file_upload" class="hidden" /> </p>
             <p> Caption: <input type="text" name="caption" value="" /></p>
-            <input class="button w200px" type="submit" name="submit" value="Upload" />
+            <button class="button" type="submit" name="submit" value="Upload"><span data-icon="'"></span> Upload</button>
         </fieldset>
     </form>
 <?php include_layout_template( "admin_footer.php" ); ?>

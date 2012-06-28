@@ -19,8 +19,9 @@
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
 
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="font/icomoon/style.css">
     <link rel="stylesheet" href="css/fontsquirrel/blanch.css">
+    <link rel="stylesheet" href="css/main.css">
 
     <!-- All JavaScript at the bottom, except this Modernizr build. -->
     <script src="js/vendor/modernizr.js"></script>
@@ -52,7 +53,7 @@
                 ?>
                 <form action="search.php">
                     <input type="text" />
-                    <button class="header-button">Search</button>
+                    <button class="header-button" data-icon='"'>Search</button>
                 </form>
             </div><!-- #actions -->
         </div><!-- .inside -->

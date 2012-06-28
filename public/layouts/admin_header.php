@@ -19,8 +19,9 @@
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
 
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../font/icomoon/style.css">
     <link rel="stylesheet" href="../css/fontsquirrel/blanch.css">
+    <link rel="stylesheet" href="../css/main.css">
 
     <!-- All JavaScript at the bottom, except this Modernizr build. -->
     <script src="../js/vendor/modernizr.js"></script>
@@ -44,7 +45,7 @@
                     if( !$user ) die( "Cannot find user with id " . $session->user_id . " in the database." );
                     $username = $user->username;
                     $html =  "<p>logged in as: <strong>" . $username . "</strong>";
-                    $html .= "<a class=\"header-link\" href=\"../index.php?logout=true\">Logout</a></p>";
+                    $html .= "<a class=\"header-button\" data-icon=\"5\" href=\"../index.php?logout=true\">Logout</a></p>";
                     echo $html;
                 } else {
                     echo "<p><a class=\"header-link\" href=\"login.php\">Login</a><p>";
@@ -52,7 +53,7 @@
                 ?>
                 <form action="search.php">
                     <input type="text" />
-                    <button class="header-button">Search</button>
+                    <button class="header-button" data-icon='"'></button>
                 </form>
             </div><!-- #actions -->
         </div><!-- .inside -->

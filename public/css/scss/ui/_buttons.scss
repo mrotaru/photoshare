@@ -73,4 +73,32 @@ button, .button {
     text-decoration: none;
 }
 
+.rename-button {
+    @include simple-button( #DDD );
+}
+
+.delete-button {
+    @include simple-button( #B22 );
+}
+
+.download-button {
+    @include simple-button( #4D4 );
+    span {
+        color: #EEE;
+    }
+}
+
+[data-icon]:before {
+    color: inherit;
+    font-weight: normal;
+    font-size: 140%;
+    margin-right: 5px;
+    position: relative;
+    vertical-align: text-bottom;
+}
+
+header [data-icon]:before {
+    color: #555;
+}
+
 /* }}} ui - buttons */

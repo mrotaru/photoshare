@@ -613,6 +613,130 @@ button:active, .button:active {
   box-shadow: 0 0 5px 2px black inset, 0 1px 0 0 #374d47;
 }
 
+.rename-button {
+  -moz-border-bottom-colors: none;
+  -moz-border-image: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  background-color: #dddddd;
+  background-image: -moz-linear-gradient(center top, #dddddd, #bbbbbb);
+  border-color: #bbbbbb #bbbbbb #aaaaaa;
+  border-radius: 3px 3px 3px 3px;
+  border-style: solid;
+  border-width: 1px;
+  color: #111 !important;
+  font: bold 11px/1 "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+  text-align: center;
+  text-shadow: 0 1px 0 #dddddd;
+  text-decoration: none;
+  padding: 8px 12px;
+  margin: 5px;
+}
+.rename-button:hover {
+  background-color: #cecece;
+  background-image: -moz-linear-gradient(center top, #cecece, #aaaaaa);
+  border-color: #aaaaaa #aaaaaa #868686;
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+  text-shadow: 0 1px 0 #cecece;
+}
+.rename-button:active {
+  border-color: #999999 #999999 #777777;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 0 0 5px 2px #999999 inset, 0 1px 0 0 #dddddd;
+}
+
+.delete-button {
+  -moz-border-bottom-colors: none;
+  -moz-border-image: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  background-color: #bb2222;
+  background-image: -moz-linear-gradient(center top, #bb2222, #811717);
+  border-color: #811717 #811717 #651212;
+  border-radius: 3px 3px 3px 3px;
+  border-style: solid;
+  border-width: 1px;
+  color: #EEE !important;
+  font: bold 11px/1 "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+  text-align: center;
+  text-shadow: 0 1px 0 #bb2222;
+  text-decoration: none;
+  padding: 8px 12px;
+  margin: 5px;
+}
+.delete-button:hover {
+  background-color: #a21d1d;
+  background-image: -moz-linear-gradient(center top, #a21d1d, #651212);
+  border-color: #651212 #651212 #280707;
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+  text-shadow: 0 1px 0 #a21d1d;
+}
+.delete-button:active {
+  border-color: #490d0d #490d0d #0e0303;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 0 0 5px 2px #490d0d inset, 0 1px 0 0 #bb2222;
+}
+
+.download-button {
+  -moz-border-bottom-colors: none;
+  -moz-border-image: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  background-color: #44dd44;
+  background-image: -moz-linear-gradient(center top, #44dd44, #22ba22);
+  border-color: #22ba22 #22ba22 #1d9e1d;
+  border-radius: 3px 3px 3px 3px;
+  border-style: solid;
+  border-width: 1px;
+  color: #111 !important;
+  font: bold 11px/1 "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+  text-align: center;
+  text-shadow: 0 1px 0 #44dd44;
+  text-decoration: none;
+  padding: 8px 12px;
+  margin: 5px;
+}
+.download-button:hover {
+  background-color: #2bd82b;
+  background-image: -moz-linear-gradient(center top, #2bd82b, #1d9e1d);
+  border-color: #1d9e1d #1d9e1d #126212;
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+  text-shadow: 0 1px 0 #2bd82b;
+}
+.download-button:active {
+  border-color: #188218 #188218 #0d480d;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 0 0 5px 2px #188218 inset, 0 1px 0 0 #44dd44;
+}
+.download-button span {
+  color: #EEE;
+}
+
+[data-icon]:before {
+  color: inherit;
+  font-weight: normal;
+  font-size: 140%;
+  margin-right: 5px;
+  position: relative;
+  vertical-align: text-bottom;
+}
+
+header [data-icon]:before {
+  color: #555;
+}
+
 /* }}} ui - buttons */
 /* {{{áui - alerts */
 .error {
@@ -876,3 +1000,4 @@ form label {
 }
 
 /* }}} html5-boilerplate - HELPERS*/
+/* vim: set foldmethod=marker: */
