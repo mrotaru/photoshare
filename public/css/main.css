@@ -459,6 +459,29 @@ nav ol {
 /* ==|== primary styles =====================================================*/
 /* {{{ colors */
 /* }}} colors */
+/* {{{ tables */
+.photos {
+  border: 2px solid #d1d1d1;
+  margin: 20px 0px;
+  border-collapse: collapse;
+  font-family: monospace, serif;
+  _font-family: 'courier new', monospace;
+  font-size: 1em;
+  background-color: #EEE;
+}
+
+.photos th {
+  padding: 5px;
+  background-color: #bdd0cb;
+}
+
+.photos td {
+  border: 1px solid white;
+  vertical-align: middle;
+  padding: 0.3em 1em;
+}
+
+/* }}} tables */
 /* {{{ ui - buttons */
 .simple-grey-button {
   -moz-border-bottom-colors: none;

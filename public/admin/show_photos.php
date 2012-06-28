@@ -11,10 +11,12 @@ $photos = Photograph::find_all();
 info_message( $message );
 
 if( !empty( $photos )) {
+    echo( "<h2>Your uploaded photos</h2>" );
     // table header
     echo( "
         <table class=\"photos\"> 
         <tr>
+        <th></th>
         <th>Name</th>
         <th>Size</th>
         <th>Caption</th>
