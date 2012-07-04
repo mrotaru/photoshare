@@ -1,0 +1,1 @@
+let g:locahost_cutoff=4 " this variable is used to view the current php file in the browser
