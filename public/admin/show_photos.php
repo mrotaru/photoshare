@@ -13,30 +13,22 @@ info_message( $message );
 if( !empty( $photos )) {
     echo( "<h2>Your uploaded photos</h2>" );
     // table header
-    echo( "
-        <table class=\"photos\"> 
-        <tr>
-        <th class=\"th-image\"></th>
-        <th class=\"th-name\">Name</th>
-        <th class=\"th-size\">Size</th>
-        <th class=\"th-caption\">Caption</th>
-        <th class=\"th-actions\">Actions</th>
-        </tr>
-        " );
-    foreach( $photos as $photo ) {
+    echo( " <div id=\"gallery\" class=\"clearfix set\"> " );
+    $n = sizeof( $photos );
+    for( $i=0; $i < $n; $i++ ) {
+        $photo = $photos[$i];
+        if( $i == 0  ) $class = "image first";
+        else if( $i == $n-1 ) $class = "image last";
+        else $class = "image";
         echo( "
-            <tr>
-            <td><img src=\"" . $photo->image_path() . "\" width=\"100px\" /></td>
-            <td>" . $photo->filename . "</td>" . "
-            <td>" . $photo->human_readable_size() . "</td>
-            <td>" . $photo->caption . "</td>" . "
-            <td><a href=\"#\" class=\"rename-button\"><span data-icon=\"$\"></span>Rename</a>
-            <a href=\"delete.php?id=" . $photo->id . "\" class=\"delete-button\"><span data-icon=\"%\"></span>Delete</a>
-            <a href=\"#\" class=\"download-button\"><span data-icon=\"&\"></span>Download</a></td>
-            </tr>
+            <div class=\"" . $class . "\">
+            <a rel=\"lightbox[photos]\" href=\"" . $photo->image_path() . "\" title=\"" . $photo->caption . "\">
+            <img src=\"" . $photo->image_path() . "\" width=\"197px\" height=\"197px\" />
+            </a>
+            </div>
             ");
     }
-    echo( "</table>" );
+    echo( " </div> " );
 } else {
     echo( "<p>There are no photos to display.</p>" );
 }

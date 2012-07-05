@@ -201,6 +201,15 @@ h1, h2, h3, h4 {
     width: 200px;
 }
 
+.image {
+    width: 200px;
+    height: 200px;
+    float: left;
+    padding: 3px;
+    border: 1px solid back;
+    margin: 5px;
+}
+
 form label { float: left; }
 
 /* ==|== media queries ======================================================

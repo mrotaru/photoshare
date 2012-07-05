@@ -4,6 +4,7 @@
 
     <!-- scripts should be concatenated and minified via build script -->
     <script src="../js/main.js"></script>
+    <script src="../js/vendor/lightbox/jquery.lightbox.js"></script>
 
     </div><!-- .inside -->
     </div><!-- #main -->

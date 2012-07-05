@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="../font/icomoon/style.css">
     <link rel="stylesheet" href="../css/fontsquirrel/blanch.css">
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../js/vendor/lightbox/css/lightbox.css">
 
     <!-- All JavaScript at the bottom, except this Modernizr build. -->
     <script src="../js/vendor/modernizr.js"></script>
