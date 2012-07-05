@@ -12,7 +12,6 @@ info_message( $message );
 
 if( !empty( $photos )) {
     echo( "<h2>Your uploaded photos</h2>" );
-    // table header
     echo( " <div id=\"gallery\" class=\"clearfix set\"> " );
     $n = sizeof( $photos );
     for( $i=0; $i < $n; $i++ ) {
@@ -22,7 +21,7 @@ if( !empty( $photos )) {
         else $class = "image";
         echo( "
             <div class=\"" . $class . "\">
-            <a rel=\"lightbox[photos]\" href=\"" . $photo->image_path() . "\" title=\"" . $photo->caption . "\">
+            <a href=\"photo.php?id=" . $photo->id . "\" title=\"" . $photo->caption . "\">
             <img src=\"" . $photo->image_path() . "\" width=\"197px\" height=\"197px\" />
             </a>
             </div>
