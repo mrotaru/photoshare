@@ -31,6 +31,17 @@ CREATE TABLE IF NOT EXISTS `photographs` (
     caption VARCHAR(255) NOT NULL
 );
 
+-- comments table
+CREATE TABLE IF NOT EXISTS `comments` (
+    id int(11) NOT NULL auto_increment PRIMARY KEY,
+    photo_id int(11) NOT NULL,
+    user_id int(11) NOT NULL, -- annonymous comments not allowed
+    created DATETIME NOT NULL,
+    body VARCHAR(255) NOT NULL
+);
+
+ALTER TABLE `comments` ADD INDEX (photo_id); -- faster searches
+
 -- add test users
 INSERT INTO `users` ( username, password, first_name, last_name, email ) VALUES
 ( 'derp', 'asdasd', 'Derp', 'Derpowsky', 'derp@gmail.com' );

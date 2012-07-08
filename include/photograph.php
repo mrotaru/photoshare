@@ -19,13 +19,13 @@ class Photograph extends DatabaseObject {
 
     protected $upload_errors = array(
         // http://www.php.net/manual/en/features.file-upload.errors.php
-        UPLOAD_ERR_OK 				=> "No errors.",
+        UPLOAD_ERR_OK 			=> "No errors.",
         UPLOAD_ERR_INI_SIZE  	=> "Larger than upload_max_filesize.",
         UPLOAD_ERR_FORM_SIZE 	=> "Larger than form MAX_FILE_SIZE.",
         UPLOAD_ERR_PARTIAL 		=> "Partial upload.",
         UPLOAD_ERR_NO_FILE 		=> "No file.",
-        UPLOAD_ERR_NO_TMP_DIR => "No temporary directory.",
-        UPLOAD_ERR_CANT_WRITE => "Can't write to disk.",
+        UPLOAD_ERR_NO_TMP_DIR   => "No temporary directory.",
+        UPLOAD_ERR_CANT_WRITE   => "Can't write to disk.",
         UPLOAD_ERR_EXTENSION 	=> "File upload stopped by extension."
     );
 
@@ -109,7 +109,6 @@ class Photograph extends DatabaseObject {
     public function image_path_abs() {
         return( SITE_ROOT .DS. 'public' . DS . $this->upload_dir . DS . $this->filename );
     }
-
 
     // from: http://www.php.net/manual/en/function.filesize.php#100097 
     //--------------------------------------------------------------------------

@@ -16,13 +16,9 @@ if( isset( $_GET[ 'clear' ] ) && $_GET[ 'clear' ] == 'true' ) {
             global $logger;
             echo $logger->get_log_file_contents();?></textarea>
         <br/>
-        <?php
-        echo ("
-            <input type='button' class='button' value='Clear Log File'
-            onclick=\"window.location='viewlog.php?clear=true';\" />
-          ");
-        ?>
-    <fieldset>
+        <input type='button' class='button' value='Clear Log File'
+        onclick="window.location='viewlog.php?clear=true'" />
+    </fieldset>
 </form>
 
 <?php include_layout_template( "admin_footer.php" ); ?>

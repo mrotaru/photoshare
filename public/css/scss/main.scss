@@ -167,9 +167,32 @@ fieldset {
     margin: 10px;
 }
 
-h1, h2, h3, h4 {
+h1, h2, {
     margin: 0px;
     font-family: "BlanchCaps";
+}
+
+h3 {
+    margin: 0px;
+    font-family: "BlanchCapsInline";
+    font-size: 50px;
+    font-weight: normal;
+    width: 100%;
+    text-shadow: 1px 1px 2px #6e6e6e;
+    filter: dropshadow(color=#6e6e6e, offx=1, offy=1);
+    width: 100%;
+    position: relative;
+    padding-left: 22px;
+    left: -11px;
+    background-color: lighten( $header-bg, 50% );
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+h4 {
+    margin: 0px;
+    font-family: "BlanchCondensed";
+    font-size: 15px;
 }
 
 .first-word {
@@ -187,6 +210,7 @@ h1, h2, h3, h4 {
     border-right: 1px solid #CCC;
     height: 100%;
     padding-bottom: 100px;
+    @include box-shadow( 0px 2px 5px #888 );
 }
 
 .actions {
