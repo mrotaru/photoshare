@@ -37,23 +37,26 @@ info_message( $message );
 
 <section class="comments">
     <h3>Comments</h3>
-    <?php
-    $comments = Comment::find_comments_on( $_GET[ 'id' ] );
-foreach( $comments as $comment ) {
-    echo( "<div class=\"comment\">" );
-    $username = User::find_by_id( $comment->user_id )->username;
-    $date = strftime( "%a, %#d %b %Y", strtotime( $comment->created ));
-    echo( "<h4>" . $username . " on " . $date . ":</h4>" );
-    echo( "<p>" . $comment->body . "</b>" );
-    echo( "</div>" );
+<?php
+$comments = Comment::find_comments_on( $_GET[ 'id' ] );
+if( count( $comments ) > 0 ) {
+    foreach( $comments as $comment ) {
+        echo( "<div class=\"comment\">" );
+        $username = User::find_by_id( $comment->user_id )->username;
+        $date = strftime( "%a, %#d %b %Y, %I:%M:%S %p", strtotime( $comment->created ));
+        echo( "<h4>" . $username . " on " . $date . ":</h4>" );
+        echo( "<p>" . $comment->body . "</b>" );
+        echo( "</div>" );
+        }
+} else { // no comments
+    echo( "No comments yet." );
 }
-    ?>
+?>
 </section>
-
 <section class="comment">
+<h3>Your Comment</h3>
     <form action="photo.php?id=<?php echo( $_GET[ 'id' ] );?>" enctype="multipart/form-data" method="POST">
         <fieldset>
-            <legend>Your Comment</legend>
             <textarea rows="4" cols="40" name="body"></textarea>
             <input class="button" type="submit" name="submit" value="Submit">
         </fieldset>
